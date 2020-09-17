@@ -114,14 +114,13 @@ public class interfaz extends javax.swing.JFrame {
 //Validar para que solo pase a otra ventana si ingresa un nombre para el personaje
 String nombre;
 nombre= ingresarNombre.getText();
-System.out.println(nombre);
-if (nombre != " "){
+if (nombre.equals("")){
+    ingresarNombre.setText("Debe de ingresar un nombre.");
+}
+else{
     interfaz2 cambio= new interfaz2();
     cambio.setVisible(true);
     this.dispose();
-}
-else{
-    ingresarNombre.setText("Debe de ingresar un nombre.");
 }
 // TODO add your handling code here:
     }//GEN-LAST:event_botonHeroeMouseClicked
@@ -132,9 +131,17 @@ else{
     }//GEN-LAST:event_botonHeroeActionPerformed
 
     private void botonVillanoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVillanoMouseClicked
-Villano cambio1= new Villano();
-cambio1.setVisible(true);
-this.dispose();        // TODO add your handling code here:
+    String nombre;
+    nombre= ingresarNombre.getText();
+    if (nombre.equals("")){
+        ingresarNombre.setText("Debe de ingresar un nombre.");
+    }
+    else{
+    Villano cambio1= new Villano();
+    cambio1.setVisible(true);
+    this.dispose();
+    }
+    // TODO add your handling code here:
     }//GEN-LAST:event_botonVillanoMouseClicked
 
     /**
