@@ -31,7 +31,12 @@ public class Villano extends javax.swing.JFrame {
         jLabelFondo = new javax.swing.JLabel();
         jButtonExit = new javax.swing.JButton();
         botonRegresar = new javax.swing.JButton();
+        jButtonVender = new javax.swing.JButton();
+        jButtonComprar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Dragon.jpg"))); // NOI18N
 
@@ -66,8 +71,33 @@ public class Villano extends javax.swing.JFrame {
         });
         getContentPane().add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
 
+        jButtonVender.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonVender.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jButtonVender.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonVender.setText("Vender");
+        getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 620, 110, -1));
+
+        jButtonComprar.setBackground(new java.awt.Color(51, 51, 51));
+        jButtonComprar.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jButtonComprar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonComprar.setText("Comprar");
+        getContentPane().add(jButtonComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 660, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Hechizos, armaduras, espadas... a pelear!");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 630, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Dame un alma y te dare riqueza y poder!");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 390, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Villian.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 700));
+
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 630, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -123,8 +153,13 @@ System.exit(0);        // TODO add your handling code here:
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRegresar;
+    private javax.swing.JButton jButtonComprar;
     private javax.swing.JButton jButtonExit;
+    private javax.swing.JButton jButtonVender;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
 }

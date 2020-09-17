@@ -30,13 +30,19 @@ public class interfaz2 extends javax.swing.JFrame {
 
         jButtonRegresar = new javax.swing.JButton();
         jButtonExit = new javax.swing.JButton();
+        jButtonVender = new javax.swing.JButton();
+        jButtonComprar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonRegresar.setBackground(new java.awt.Color(51, 0, 0));
+        jButtonRegresar.setBackground(new java.awt.Color(102, 0, 0));
         jButtonRegresar.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jButtonRegresar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonRegresar.setText("Regresar");
@@ -61,10 +67,45 @@ public class interfaz2 extends javax.swing.JFrame {
                 jButtonExitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 0, 100, 30));
+        getContentPane().add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, 100, 30));
+
+        jButtonVender.setBackground(new java.awt.Color(102, 0, 0));
+        jButtonVender.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jButtonVender.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonVender.setText("Vender ");
+        jButtonVender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVenderActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 630, 120, -1));
+
+        jButtonComprar.setBackground(new java.awt.Color(102, 0, 0));
+        jButtonComprar.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jButtonComprar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonComprar.setText("Comprar");
+        getContentPane().add(jButtonComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 700, 120, 30));
+
+        jLabel1.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabel1.setText("Listo para desechar esa vieja armadura!");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 380, 30));
+
+        jLabel2.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabel2.setText("Necesitas nuevo equipo para vencer!");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 670, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Harrington", 1, 15)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 204, 102));
+        jLabel3.setText("\"Los guerreros quieren un oponente digno. ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, 30));
+
+        jLabel4.setFont(new java.awt.Font("Harrington", 1, 15)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 204, 102));
+        jLabel4.setText("No hay satisfaccion en luchar con lo patético\"");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cuarto de armas.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1040, -1));
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 730));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -82,6 +123,10 @@ public class interfaz2 extends javax.swing.JFrame {
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
 System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonExitActionPerformed
+
+    private void jButtonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVenderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,8 +164,14 @@ System.exit(0);        // TODO add your handling code here:
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonComprar;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonRegresar;
+    private javax.swing.JButton jButtonVender;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,7 +30,7 @@ public class interfaz extends javax.swing.JFrame {
 
         jLabelNombre = new javax.swing.JLabel();
         jLabel1Bienvenido = new javax.swing.JLabel();
-        jTextFieldUser = new javax.swing.JTextField();
+        ingresarNombre = new javax.swing.JTextField();
         jButtonExit = new javax.swing.JButton();
         botonHeroe = new javax.swing.JButton();
         botonVillano = new javax.swing.JButton();
@@ -48,15 +48,15 @@ public class interfaz extends javax.swing.JFrame {
         jLabel1Bienvenido.setText("¡Bienvenido a la Tienda Felurian !");
         getContentPane().add(jLabel1Bienvenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 400, 30));
 
-        jTextFieldUser.setBackground(new java.awt.Color(255, 255, 204));
-        jTextFieldUser.setFont(new java.awt.Font("Harrington", 1, 14)); // NOI18N
-        jTextFieldUser.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 102)));
-        jTextFieldUser.addActionListener(new java.awt.event.ActionListener() {
+        ingresarNombre.setBackground(new java.awt.Color(255, 255, 204));
+        ingresarNombre.setFont(new java.awt.Font("Harrington", 1, 14)); // NOI18N
+        ingresarNombre.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 102)));
+        ingresarNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldUserActionPerformed(evt);
+                ingresarNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 330, 30));
+        getContentPane().add(ingresarNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 330, 30));
 
         jButtonExit.setBackground(new java.awt.Color(255, 255, 204));
         jButtonExit.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
@@ -105,16 +105,24 @@ public class interfaz extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButtonExitActionPerformed
 
-    private void jTextFieldUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUserActionPerformed
+    private void ingresarNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarNombreActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jTextFieldUserActionPerformed
+    }//GEN-LAST:event_ingresarNombreActionPerformed
 
     private void botonHeroeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonHeroeMouseClicked
-
-interfaz2 cambio= new interfaz2();
-cambio.setVisible(true);
-this.dispose();
+//Validar para que solo pase a otra ventana si ingresa un nombre para el personaje
+String nombre;
+nombre= ingresarNombre.getText();
+System.out.println(nombre);
+if (nombre != " "){
+    interfaz2 cambio= new interfaz2();
+    cambio.setVisible(true);
+    this.dispose();
+}
+else{
+    ingresarNombre.setText("Debe de ingresar un nombre.");
+}
 // TODO add your handling code here:
     }//GEN-LAST:event_botonHeroeMouseClicked
 
@@ -167,10 +175,10 @@ this.dispose();        // TODO add your handling code here:
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonHeroe;
     private javax.swing.JButton botonVillano;
+    private javax.swing.JTextField ingresarNombre;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JLabel jLabel1Bienvenido;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelNombre;
-    private javax.swing.JTextField jTextFieldUser;
     // End of variables declaration//GEN-END:variables
 }
