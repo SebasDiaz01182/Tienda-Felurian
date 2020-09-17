@@ -32,6 +32,8 @@ public class interfaz extends javax.swing.JFrame {
         jLabel1Bienvenido = new javax.swing.JLabel();
         jTextFieldUser = new javax.swing.JTextField();
         jButtonExit = new javax.swing.JButton();
+        botonHeroe = new javax.swing.JButton();
+        botonVillano = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,18 +56,43 @@ public class interfaz extends javax.swing.JFrame {
                 jTextFieldUserActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextFieldUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 330, 30));
+        getContentPane().add(jTextFieldUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 330, 30));
 
-        jButtonExit.setBackground(new java.awt.Color(255, 255, 153));
+        jButtonExit.setBackground(new java.awt.Color(255, 255, 204));
         jButtonExit.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jButtonExit.setText("Salir");
-        jButtonExit.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(255, 204, 102)));
+        jButtonExit.setBorder(null);
         jButtonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExitActionPerformed(evt);
             }
         });
         getContentPane().add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 0, 80, 30));
+
+        botonHeroe.setBackground(new java.awt.Color(255, 255, 204));
+        botonHeroe.setFont(new java.awt.Font("Harrington", 1, 14)); // NOI18N
+        botonHeroe.setText("Inicia una nueva aventura como héroe");
+        botonHeroe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonHeroeMouseClicked(evt);
+            }
+        });
+        botonHeroe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonHeroeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonHeroe, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 330, 30));
+
+        botonVillano.setBackground(new java.awt.Color(255, 255, 204));
+        botonVillano.setFont(new java.awt.Font("Harrington", 1, 14)); // NOI18N
+        botonVillano.setText("Listo para sembrar el caos en la villa");
+        botonVillano.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonVillanoMouseClicked(evt);
+            }
+        });
+        getContentPane().add(botonVillano, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 330, 30));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/KvotheWallpaper.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 590));
@@ -80,7 +107,27 @@ public class interfaz extends javax.swing.JFrame {
 
     private void jTextFieldUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUserActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextFieldUserActionPerformed
+
+    private void botonHeroeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonHeroeMouseClicked
+
+interfaz2 cambio= new interfaz2();
+cambio.setVisible(true);
+this.dispose();
+// TODO add your handling code here:
+    }//GEN-LAST:event_botonHeroeMouseClicked
+
+    private void botonHeroeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHeroeActionPerformed
+        // TODO add your handling code here:
+        //interfaz2.txtBienvenido.setText(jTextFieldUser.getText());
+    }//GEN-LAST:event_botonHeroeActionPerformed
+
+    private void botonVillanoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVillanoMouseClicked
+Villano cambio1= new Villano();
+cambio1.setVisible(true);
+this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_botonVillanoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -118,6 +165,8 @@ public class interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonHeroe;
+    private javax.swing.JButton botonVillano;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JLabel jLabel1Bienvenido;
     private javax.swing.JLabel jLabelFondo;
