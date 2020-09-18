@@ -17,6 +17,9 @@ public class interfaz2 extends javax.swing.JFrame {
     public interfaz2() {
         initComponents();
         this.setLocationRelativeTo(null);
+        interfaz nombreRecuperar=new interfaz();
+        nombrePersonaje=nombreRecuperar.nombreIngresado;
+        jLabel5.setText("¡Bienvenido "+nombrePersonaje+"!");
     }
 
     /**
@@ -35,6 +38,7 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
@@ -94,12 +98,17 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabel2.setText("Necesitas nuevo equipo para vencer!");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 670, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Harrington", 1, 15)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Harrington", 3, 15)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 204, 102));
         jLabel3.setText("\"Los guerreros quieren un oponente digno. ");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, 30));
 
-        jLabel4.setFont(new java.awt.Font("Harrington", 1, 15)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 420, -1));
+
+        jLabel4.setFont(new java.awt.Font("Harrington", 3, 15)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 204, 102));
         jLabel4.setText("No hay satisfaccion en luchar con lo patético\"");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
@@ -172,6 +181,8 @@ System.exit(0);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
+    public String nombrePersonaje="";
 }

@@ -17,6 +17,9 @@ public class Villano extends javax.swing.JFrame {
     public Villano() {
         initComponents();
         this.setLocationRelativeTo(null);
+        interfaz nombreRecuperar=new interfaz();
+        nombreVillano=nombreRecuperar.nombreIngresado;
+        jLabel5.setText("¡Bienvenido "+nombreVillano+"!");
     }
 
     /**
@@ -35,6 +38,7 @@ public class Villano extends javax.swing.JFrame {
         jButtonComprar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -92,6 +96,11 @@ public class Villano extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Dame un alma y te dare riqueza y poder!");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 390, -1));
+
+        jLabel5.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("jLabel5");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 260, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Villian.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 700));
@@ -160,6 +169,8 @@ System.exit(0);        // TODO add your handling code here:
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
-}
+    public String nombreVillano="";
+}   

@@ -14,6 +14,8 @@ public class interfaz extends javax.swing.JFrame {
     /**
      * Creates new form interfaz
      */
+    public static String nombreIngresado="";
+   
     public interfaz() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -112,9 +114,9 @@ public class interfaz extends javax.swing.JFrame {
 
     private void botonHeroeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonHeroeMouseClicked
 //Validar para que solo pase a otra ventana si ingresa un nombre para el personaje
-String nombre;
-nombre= ingresarNombre.getText();
-if (nombre.equals("")){
+
+    nombreIngresado= ingresarNombre.getText();
+if (nombreIngresado.equals("")){
     ingresarNombre.setText("Debe de ingresar un nombre.");
 }
 else{
@@ -131,9 +133,9 @@ else{
     }//GEN-LAST:event_botonHeroeActionPerformed
 
     private void botonVillanoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVillanoMouseClicked
-    String nombre;
-    nombre= ingresarNombre.getText();
-    if (nombre.equals("")){
+
+    nombreIngresado= ingresarNombre.getText();
+    if (nombreIngresado.equals("")){
         ingresarNombre.setText("Debe de ingresar un nombre.");
     }
     else{
@@ -188,4 +190,5 @@ else{
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelNombre;
     // End of variables declaration//GEN-END:variables
+    
 }
