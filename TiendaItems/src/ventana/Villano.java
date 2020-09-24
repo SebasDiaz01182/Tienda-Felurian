@@ -19,7 +19,7 @@ public class Villano extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         interfaz nombreRecuperar=new interfaz();
         nombreVillano=nombreRecuperar.nombreIngresado;
-        jLabel5.setText("¡Bienvenido "+nombreVillano+"!");
+        jLabelNombre.setText("¡Bienvenido "+nombreVillano+"!");
     }
 
     /**
@@ -36,11 +36,15 @@ public class Villano extends javax.swing.JFrame {
         botonRegresar = new javax.swing.JButton();
         jButtonVender = new javax.swing.JButton();
         jButtonComprar = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabelFraseComp = new javax.swing.JLabel();
+        jLabelFraseVend = new javax.swing.JLabel();
+        jLabelNombre = new javax.swing.JLabel();
+        jLabelStatFortuna = new javax.swing.JLabel();
+        jLabelStatDefensa = new javax.swing.JLabel();
+        jLabelStatAtaque = new javax.swing.JLabel();
+        jLabelStatVida = new javax.swing.JLabel();
+        jLabelStatFuerza = new javax.swing.JLabel();
+        jLabelFondoVillano = new javax.swing.JLabel();
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Dragon.jpg"))); // NOI18N
 
@@ -79,34 +83,61 @@ public class Villano extends javax.swing.JFrame {
         jButtonVender.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jButtonVender.setForeground(new java.awt.Color(255, 255, 255));
         jButtonVender.setText("Vender");
+        jButtonVender.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonVenderMouseClicked(evt);
+            }
+        });
         getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 620, 110, -1));
 
         jButtonComprar.setBackground(new java.awt.Color(51, 51, 51));
         jButtonComprar.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jButtonComprar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonComprar.setText("Comprar");
+        jButtonComprar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonComprarMouseClicked(evt);
+            }
+        });
         getContentPane().add(jButtonComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 660, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Hechizos, armaduras, espadas... a pelear!");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 630, -1, -1));
+        jLabelFraseComp.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabelFraseComp.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelFraseComp.setText("Hechizos, armaduras, espadas... a pelear!");
+        getContentPane().add(jLabelFraseComp, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 630, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Dame un alma y te dare riqueza y poder!");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 390, -1));
+        jLabelFraseVend.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabelFraseVend.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelFraseVend.setText("Dame un alma y te dare riqueza y poder!");
+        getContentPane().add(jLabelFraseVend, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 390, -1));
 
-        jLabel5.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 260, -1));
+        jLabelNombre.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelNombre.setText("jLabel5");
+        getContentPane().add(jLabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 260, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Villian.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 700));
+        jLabelStatFortuna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Magic.png"))); // NOI18N
+        jLabelStatFortuna.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 102, 102)));
+        getContentPane().add(jLabelStatFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 460, -1, -1));
 
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 630, -1, -1));
+        jLabelStatDefensa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Shield.png"))); // NOI18N
+        jLabelStatDefensa.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 102, 102)));
+        getContentPane().add(jLabelStatDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, 50));
+
+        jLabelStatAtaque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Sword.png"))); // NOI18N
+        jLabelStatAtaque.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 102, 102)));
+        getContentPane().add(jLabelStatAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 70));
+
+        jLabelStatVida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Dark3.png"))); // NOI18N
+        jLabelStatVida.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 102, 102)));
+        getContentPane().add(jLabelStatVida, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
+
+        jLabelStatFuerza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Hand.png"))); // NOI18N
+        jLabelStatFuerza.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 102, 102)));
+        getContentPane().add(jLabelStatFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 256, -1, -1));
+
+        jLabelFondoVillano.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Villian.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondoVillano, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -124,6 +155,18 @@ this.dispose();        // TODO add your handling code here:
     private void jButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExitActionPerformed
 System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonExitActionPerformed
+
+    private void jButtonVenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonVenderMouseClicked
+Tienda cambio6= new Tienda();
+cambio6.setVisible(true);
+this.dispose();
+    }//GEN-LAST:event_jButtonVenderMouseClicked
+
+    private void jButtonComprarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonComprarMouseClicked
+Tienda cambio6= new Tienda();
+cambio6.setVisible(true);
+this.dispose();
+    }//GEN-LAST:event_jButtonComprarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -165,12 +208,16 @@ System.exit(0);        // TODO add your handling code here:
     private javax.swing.JButton jButtonComprar;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonVender;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelFondoVillano;
+    private javax.swing.JLabel jLabelFraseComp;
+    private javax.swing.JLabel jLabelFraseVend;
+    private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelStatAtaque;
+    private javax.swing.JLabel jLabelStatDefensa;
+    private javax.swing.JLabel jLabelStatFortuna;
+    private javax.swing.JLabel jLabelStatFuerza;
+    private javax.swing.JLabel jLabelStatVida;
     // End of variables declaration//GEN-END:variables
     public String nombreVillano="";
 }   

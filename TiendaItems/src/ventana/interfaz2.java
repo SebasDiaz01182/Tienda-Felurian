@@ -19,7 +19,7 @@ public class interfaz2 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         interfaz nombreRecuperar=new interfaz();
         nombrePersonaje=nombreRecuperar.nombreIngresado;
-        jLabel5.setText("¡Bienvenido "+nombrePersonaje+"!");
+        jLabelNombreH.setText("¡Bienvenido "+nombrePersonaje+"!");
     }
 
     /**
@@ -35,11 +35,16 @@ public class interfaz2 extends javax.swing.JFrame {
         jButtonExit = new javax.swing.JButton();
         jButtonVender = new javax.swing.JButton();
         jButtonComprar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabelFraseV = new javax.swing.JLabel();
+        jLabelFraseC = new javax.swing.JLabel();
+        jLabelQuote = new javax.swing.JLabel();
+        jLabelNombreH = new javax.swing.JLabel();
+        jLabelQuote2 = new javax.swing.JLabel();
+        jLabelStatVida = new javax.swing.JLabel();
+        jLabelStatFuerza = new javax.swing.JLabel();
+        jLabelStatsAtaque = new javax.swing.JLabel();
+        jLabelStatDefensa = new javax.swing.JLabel();
+        jLabelStatFortuna = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,6 +82,11 @@ public class interfaz2 extends javax.swing.JFrame {
         jButtonVender.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jButtonVender.setForeground(new java.awt.Color(255, 255, 255));
         jButtonVender.setText("Vender ");
+        jButtonVender.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonVenderMouseClicked(evt);
+            }
+        });
         jButtonVender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonVenderActionPerformed(evt);
@@ -88,30 +98,59 @@ public class interfaz2 extends javax.swing.JFrame {
         jButtonComprar.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jButtonComprar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonComprar.setText("Comprar");
+        jButtonComprar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonComprarMouseClicked(evt);
+            }
+        });
         getContentPane().add(jButtonComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 700, 120, 30));
 
-        jLabel1.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
-        jLabel1.setText("Listo para desechar esa vieja armadura!");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 380, 30));
+        jLabelFraseV.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabelFraseV.setText("Listo para desechar esa vieja armadura!");
+        getContentPane().add(jLabelFraseV, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 380, 30));
 
-        jLabel2.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
-        jLabel2.setText("Necesitas nuevo equipo para vencer!");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 670, -1, -1));
+        jLabelFraseC.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabelFraseC.setText("Necesitas nuevo equipo para vencer!");
+        getContentPane().add(jLabelFraseC, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 670, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Harrington", 3, 15)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 204, 102));
-        jLabel3.setText("\"Los guerreros quieren un oponente digno. ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, 30));
+        jLabelQuote.setFont(new java.awt.Font("Harrington", 3, 15)); // NOI18N
+        jLabelQuote.setForeground(new java.awt.Color(255, 204, 102));
+        jLabelQuote.setText("\"Los guerreros quieren un oponente digno. ");
+        getContentPane().add(jLabelQuote, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, 30));
 
-        jLabel5.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("jLabel5");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 420, -1));
+        jLabelNombreH.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelNombreH.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelNombreH.setText("jLabel5");
+        getContentPane().add(jLabelNombreH, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 420, -1));
 
-        jLabel4.setFont(new java.awt.Font("Harrington", 3, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 204, 102));
-        jLabel4.setText("No hay satisfaccion en luchar con lo patético\"");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
+        jLabelQuote2.setFont(new java.awt.Font("Harrington", 3, 15)); // NOI18N
+        jLabelQuote2.setForeground(new java.awt.Color(255, 204, 102));
+        jLabelQuote2.setText("No hay satisfaccion en luchar con lo patético\"");
+        getContentPane().add(jLabelQuote2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
+
+        jLabelStatVida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CorazonFn2.png"))); // NOI18N
+        jLabelStatVida.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
+        getContentPane().add(jLabelStatVida, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 50, -1));
+
+        jLabelStatFuerza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/puño.jpg"))); // NOI18N
+        jLabelStatFuerza.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
+        jLabelStatFuerza.setMaximumSize(new java.awt.Dimension(41, 37));
+        jLabelStatFuerza.setMinimumSize(new java.awt.Dimension(41, 37));
+        jLabelStatFuerza.setPreferredSize(new java.awt.Dimension(41, 37));
+        getContentPane().add(jLabelStatFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 50, 50));
+
+        jLabelStatsAtaque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Espadafin.png"))); // NOI18N
+        jLabelStatsAtaque.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
+        jLabelStatsAtaque.setPreferredSize(new java.awt.Dimension(43, 40));
+        getContentPane().add(jLabelStatsAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 50, 50));
+
+        jLabelStatDefensa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Armadura.png"))); // NOI18N
+        jLabelStatDefensa.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
+        getContentPane().add(jLabelStatDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, -1, 50));
+
+        jLabelStatFortuna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Amuleto_1.png"))); // NOI18N
+        jLabelStatFortuna.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
+        getContentPane().add(jLabelStatFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, -1, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cuarto de armas.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 730));
@@ -136,6 +175,18 @@ System.exit(0);        // TODO add your handling code here:
     private void jButtonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonVenderActionPerformed
+
+    private void jButtonVenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonVenderMouseClicked
+Tienda cambio3=new Tienda();
+cambio3.setVisible(true);
+this.dispose();
+    }//GEN-LAST:event_jButtonVenderMouseClicked
+
+    private void jButtonComprarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonComprarMouseClicked
+Tienda cambio3=new Tienda();
+cambio3.setVisible(true);
+this.dispose();
+    }//GEN-LAST:event_jButtonComprarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -177,12 +228,17 @@ System.exit(0);        // TODO add your handling code here:
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JButton jButtonVender;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelFraseC;
+    private javax.swing.JLabel jLabelFraseV;
+    private javax.swing.JLabel jLabelNombreH;
+    private javax.swing.JLabel jLabelQuote;
+    private javax.swing.JLabel jLabelQuote2;
+    private javax.swing.JLabel jLabelStatDefensa;
+    private javax.swing.JLabel jLabelStatFortuna;
+    private javax.swing.JLabel jLabelStatFuerza;
+    private javax.swing.JLabel jLabelStatVida;
+    private javax.swing.JLabel jLabelStatsAtaque;
     // End of variables declaration//GEN-END:variables
     public String nombrePersonaje="";
 }
