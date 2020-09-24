@@ -31,7 +31,6 @@ public class Tienda extends javax.swing.JFrame {
         jButtonRegresarH = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
-        scrollPane1 = new java.awt.ScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -65,7 +64,6 @@ public class Tienda extends javax.swing.JFrame {
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cantina2.png"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 540));
-        getContentPane().add(scrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 230, 230));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -125,6 +123,5 @@ this.dispose();
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonRegresarH;
     private javax.swing.JLabel jLabelFondo;
-    private java.awt.ScrollPane scrollPane1;
     // End of variables declaration//GEN-END:variables
 }

@@ -45,6 +45,7 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabelStatsAtaque = new javax.swing.JLabel();
         jLabelStatDefensa = new javax.swing.JLabel();
         jLabelStatFortuna = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -152,6 +153,10 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabelStatFortuna.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
         getContentPane().add(jLabelStatFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
+        jLabel1.setText("\\PRUEBA");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, -1, -1));
+
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cuarto de armas.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 730));
 
@@ -228,6 +233,7 @@ this.dispose();
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JButton jButtonVender;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelFraseC;
     private javax.swing.JLabel jLabelFraseV;
