@@ -30,8 +30,17 @@ public class Tienda extends javax.swing.JFrame {
 
         jButtonRegresarH = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabelStatVida = new javax.swing.JLabel();
+        jLabelStatFuerza = new javax.swing.JLabel();
+        jLabelStatAtaque = new javax.swing.JLabel();
+        jLabelStatDefensa = new javax.swing.JLabel();
+        jLabelStatFortuna = new javax.swing.JLabel();
+        jLabelSalud = new javax.swing.JLabel();
+        jLabelFuerza = new javax.swing.JLabel();
+        jLabelAtaque = new javax.swing.JLabel();
+        jLabelDefensa = new javax.swing.JLabel();
+        jLabelFortuna = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
-        scrollPane1 = new java.awt.ScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -63,9 +72,53 @@ public class Tienda extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 33, 231, -1));
 
+        jLabelStatVida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CorazonFn2.png"))); // NOI18N
+        jLabelStatVida.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
+        getContentPane().add(jLabelStatVida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, 40));
+
+        jLabelStatFuerza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/puño.jpg"))); // NOI18N
+        jLabelStatFuerza.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
+        getContentPane().add(jLabelStatFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 50, 40));
+
+        jLabelStatAtaque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Espadafin.png"))); // NOI18N
+        jLabelStatAtaque.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
+        getContentPane().add(jLabelStatAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, -1, 40));
+
+        jLabelStatDefensa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Armadura.png"))); // NOI18N
+        jLabelStatDefensa.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
+        getContentPane().add(jLabelStatDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 460, 50, 40));
+
+        jLabelStatFortuna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Amuleto_1.png"))); // NOI18N
+        jLabelStatFortuna.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
+        getContentPane().add(jLabelStatFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 50, 40));
+
+        jLabelSalud.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabelSalud.setForeground(new java.awt.Color(255, 204, 51));
+        jLabelSalud.setText("Salud: 100");
+        getContentPane().add(jLabelSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+
+        jLabelFuerza.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabelFuerza.setForeground(new java.awt.Color(255, 204, 51));
+        jLabelFuerza.setText("Fuerza: 60");
+        getContentPane().add(jLabelFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, -1, -1));
+
+        jLabelAtaque.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabelAtaque.setForeground(new java.awt.Color(255, 204, 51));
+        jLabelAtaque.setText("Ataque: 50");
+        getContentPane().add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, -1, -1));
+
+        jLabelDefensa.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabelDefensa.setForeground(new java.awt.Color(255, 204, 51));
+        jLabelDefensa.setText("Defensa: 30");
+        getContentPane().add(jLabelDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 500, -1, -1));
+
+        jLabelFortuna.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabelFortuna.setForeground(new java.awt.Color(255, 204, 51));
+        jLabelFortuna.setText("Fortuna: 10");
+        getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, -1, -1));
+
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cantina2.png"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 540));
-        getContentPane().add(scrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 100, 230, 230));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -86,9 +139,26 @@ cambio5.setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    public void cmabiarStatSalud(String cantidad){
+        jLabelSalud.setText("Salud: "+cantidad);
+    }
+    
+    public void cmabiarStatFuerza(String cantidad){
+        jLabelFuerza.setText("Fuerza: "+cantidad);
+    }
+    
+    public void cmabiarStatAtaque(String cantidad){
+        jLabelAtaque.setText("Ataque: "+cantidad);
+    }
+    
+    public void cmabiarStatDefensa(String cantidad){
+        jLabelDefensa.setText("Defensa: "+cantidad);
+    }
+    
+    public void cmabiarStatFortuna(String cantidad){
+        jLabelFortuna.setText("Fortuna: "+cantidad);
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -124,7 +194,16 @@ this.dispose();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonRegresarH;
+    private javax.swing.JLabel jLabelAtaque;
+    private javax.swing.JLabel jLabelDefensa;
     private javax.swing.JLabel jLabelFondo;
-    private java.awt.ScrollPane scrollPane1;
+    private javax.swing.JLabel jLabelFortuna;
+    private javax.swing.JLabel jLabelFuerza;
+    private javax.swing.JLabel jLabelSalud;
+    private javax.swing.JLabel jLabelStatAtaque;
+    private javax.swing.JLabel jLabelStatDefensa;
+    private javax.swing.JLabel jLabelStatFortuna;
+    private javax.swing.JLabel jLabelStatFuerza;
+    private javax.swing.JLabel jLabelStatVida;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,6 +44,11 @@ public class Villano extends javax.swing.JFrame {
         jLabelStatAtaque = new javax.swing.JLabel();
         jLabelStatVida = new javax.swing.JLabel();
         jLabelStatFuerza = new javax.swing.JLabel();
+        jLabelSalud = new javax.swing.JLabel();
+        jLabelFuerza = new javax.swing.JLabel();
+        jLabelAtaque = new javax.swing.JLabel();
+        jLabelDefensa = new javax.swing.JLabel();
+        jLabelFortuna = new javax.swing.JLabel();
         jLabelFondoVillano = new javax.swing.JLabel();
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Dragon.jpg"))); // NOI18N
@@ -136,6 +141,32 @@ public class Villano extends javax.swing.JFrame {
         jLabelStatFuerza.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 102, 102)));
         getContentPane().add(jLabelStatFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 256, -1, -1));
 
+        jLabelSalud.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelSalud.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelSalud.setText("Salud: 100");
+        getContentPane().add(jLabelSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 220, 40));
+
+        jLabelFuerza.setBackground(new java.awt.Color(255, 255, 255));
+        jLabelFuerza.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelFuerza.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelFuerza.setText("Fuerza: 60");
+        getContentPane().add(jLabelFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 220, -1));
+
+        jLabelAtaque.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelAtaque.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelAtaque.setText("Ataque: 50");
+        getContentPane().add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 240, 30));
+
+        jLabelDefensa.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelDefensa.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelDefensa.setText("Defensa: 30");
+        getContentPane().add(jLabelDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 180, 30));
+
+        jLabelFortuna.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelFortuna.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelFortuna.setText("Fortuna: 10");
+        getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 160, 30));
+
         jLabelFondoVillano.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Villian.jpg"))); // NOI18N
         getContentPane().add(jLabelFondoVillano, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 700));
 
@@ -171,6 +202,28 @@ this.dispose();
     /**
      * @param args the command line arguments
      */
+    
+    public void cmabiarStatSalud(String cantidad){
+        jLabelSalud.setText("Salud: "+cantidad);
+    }
+    
+    public void cmabiarStatFuerza(String cantidad){
+        jLabelFuerza.setText("Fuerza: "+cantidad);
+    }
+    
+    public void cmabiarStatAtaque(String cantidad){
+        jLabelAtaque.setText("Ataque: "+cantidad);
+    }
+    
+    public void cmabiarStatDefensa(String cantidad){
+        jLabelDefensa.setText("Defensa: "+cantidad);
+    }
+    
+    public void cmabiarStatFortuna(String cantidad){
+        jLabelFortuna.setText("Fortuna: "+cantidad);
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -208,11 +261,16 @@ this.dispose();
     private javax.swing.JButton jButtonComprar;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonVender;
+    private javax.swing.JLabel jLabelAtaque;
+    private javax.swing.JLabel jLabelDefensa;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelFondoVillano;
+    private javax.swing.JLabel jLabelFortuna;
     private javax.swing.JLabel jLabelFraseComp;
     private javax.swing.JLabel jLabelFraseVend;
+    private javax.swing.JLabel jLabelFuerza;
     private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelSalud;
     private javax.swing.JLabel jLabelStatAtaque;
     private javax.swing.JLabel jLabelStatDefensa;
     private javax.swing.JLabel jLabelStatFortuna;
