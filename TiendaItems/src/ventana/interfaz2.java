@@ -21,7 +21,7 @@ public class interfaz2 extends javax.swing.JFrame {
         nombrePersonaje=nombreRecuperar.nombreIngresado;
         jLabelNombreH.setText("¡Bienvenido "+nombrePersonaje+"!");
     }
-
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,6 +46,11 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabelStatDefensa = new javax.swing.JLabel();
         jLabelStatFortuna = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabelSalud = new javax.swing.JLabel();
+        jLabelFuerza = new javax.swing.JLabel();
+        jLabelAtaque = new javax.swing.JLabel();
+        jLabelDefensa = new javax.swing.JLabel();
+        jLabelFortuna = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -157,6 +162,32 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabel1.setText("\\PRUEBA");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, -1, -1));
 
+        jLabelSalud.setBackground(new java.awt.Color(153, 153, 153));
+        jLabelSalud.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelSalud.setForeground(new java.awt.Color(255, 255, 102));
+        jLabelSalud.setText("Salud: 100");
+        getContentPane().add(jLabelSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 160, 30));
+
+        jLabelFuerza.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelFuerza.setForeground(new java.awt.Color(255, 255, 102));
+        jLabelFuerza.setText("Fuerza: 60");
+        getContentPane().add(jLabelFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 170, 30));
+
+        jLabelAtaque.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelAtaque.setForeground(new java.awt.Color(255, 255, 102));
+        jLabelAtaque.setText("Ataque: 50");
+        getContentPane().add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 160, 30));
+
+        jLabelDefensa.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelDefensa.setForeground(new java.awt.Color(255, 255, 102));
+        jLabelDefensa.setText("Defensa: 30");
+        getContentPane().add(jLabelDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 160, 30));
+
+        jLabelFortuna.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelFortuna.setForeground(new java.awt.Color(255, 255, 102));
+        jLabelFortuna.setText("Fortuna: 10");
+        getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 150, 30));
+
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cuarto de armas.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 730));
 
@@ -193,9 +224,25 @@ cambio3.setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButtonComprarMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    public void cmabiarStatSalud(String cantidad){
+        jLabelSalud.setText("Salud: "+cantidad);
+    }
+    
+    public void cmabiarStatFuerza(String cantidad){
+        jLabelFuerza.setText("Fuerza: "+cantidad);
+    }
+    
+    public void cmabiarStatAtaque(String cantidad){
+        jLabelAtaque.setText("Ataque: "+cantidad);
+    }
+    
+    public void cmabiarStatDefensa(String cantidad){
+        jLabelDefensa.setText("Defensa: "+cantidad);
+    }
+    
+    public void cmabiarStatFortuna(String cantidad){
+        jLabelFortuna.setText("Fortuna: "+cantidad);
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -234,12 +281,17 @@ this.dispose();
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JButton jButtonVender;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelAtaque;
+    private javax.swing.JLabel jLabelDefensa;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelFortuna;
     private javax.swing.JLabel jLabelFraseC;
     private javax.swing.JLabel jLabelFraseV;
+    private javax.swing.JLabel jLabelFuerza;
     private javax.swing.JLabel jLabelNombreH;
     private javax.swing.JLabel jLabelQuote;
     private javax.swing.JLabel jLabelQuote2;
+    private javax.swing.JLabel jLabelSalud;
     private javax.swing.JLabel jLabelStatDefensa;
     private javax.swing.JLabel jLabelStatFortuna;
     private javax.swing.JLabel jLabelStatFuerza;
