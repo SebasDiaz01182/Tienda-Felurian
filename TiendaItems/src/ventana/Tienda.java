@@ -41,6 +41,26 @@ public class Tienda extends javax.swing.JFrame {
         jLabelAtaque = new javax.swing.JLabel();
         jLabelDefensa = new javax.swing.JLabel();
         jLabelFortuna = new javax.swing.JLabel();
+        jLabelRupias = new javax.swing.JLabel();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabelTituloSalud = new javax.swing.JLabel();
+        jLabelTituloFuerza = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jLabelTituloArmadura = new javax.swing.JLabel();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        jRadioButton9 = new javax.swing.JRadioButton();
+        jRadioButton10 = new javax.swing.JRadioButton();
+        jLabelFondoFrame2 = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,19 +99,19 @@ public class Tienda extends javax.swing.JFrame {
 
         jLabelStatFuerza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/puño.jpg"))); // NOI18N
         jLabelStatFuerza.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 630, 50, 40));
+        getContentPane().add(jLabelStatFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 630, 50, 40));
 
         jLabelStatAtaque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Espadafin.png"))); // NOI18N
         jLabelStatAtaque.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 630, -1, 40));
+        getContentPane().add(jLabelStatAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 630, -1, 40));
 
         jLabelStatDefensa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Armadura.png"))); // NOI18N
         jLabelStatDefensa.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 630, 50, 40));
+        getContentPane().add(jLabelStatDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 630, 50, 40));
 
         jLabelStatFortuna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Amuleto_1.png"))); // NOI18N
         jLabelStatFortuna.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 630, 50, 40));
+        getContentPane().add(jLabelStatFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 630, 50, 40));
 
         jLabelSalud.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelSalud.setForeground(new java.awt.Color(255, 204, 51));
@@ -101,22 +121,132 @@ public class Tienda extends javax.swing.JFrame {
         jLabelFuerza.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelFuerza.setForeground(new java.awt.Color(255, 204, 51));
         jLabelFuerza.setText("Fuerza: 60");
-        getContentPane().add(jLabelFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 670, -1, -1));
+        getContentPane().add(jLabelFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 670, -1, -1));
 
         jLabelAtaque.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelAtaque.setForeground(new java.awt.Color(255, 204, 51));
         jLabelAtaque.setText("Ataque: 50");
-        getContentPane().add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 670, -1, -1));
+        getContentPane().add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 670, -1, -1));
 
         jLabelDefensa.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelDefensa.setForeground(new java.awt.Color(255, 204, 51));
         jLabelDefensa.setText("Defensa: 30");
-        getContentPane().add(jLabelDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 670, -1, -1));
+        getContentPane().add(jLabelDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 670, -1, -1));
 
         jLabelFortuna.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelFortuna.setForeground(new java.awt.Color(255, 204, 51));
         jLabelFortuna.setText("Fortuna: 10");
-        getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 670, -1, -1));
+        getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 670, -1, -1));
+
+        jLabelRupias.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelRupias.setForeground(new java.awt.Color(255, 204, 51));
+        jLabelRupias.setText("Drabines: 100D");
+        getContentPane().add(jLabelRupias, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 170, 30));
+
+        jInternalFrame1.setVisible(true);
+        jInternalFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton2.setBackground(new java.awt.Color(51, 51, 0));
+        jButton2.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 204, 51));
+        jButton2.setText("Comprar");
+        jInternalFrame1.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 640, 190, -1));
+
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 204, 51));
+        jButton3.setText("Vender");
+        jInternalFrame1.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 190, -1));
+
+        jLabelTituloSalud.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jLabelTituloSalud.setForeground(new java.awt.Color(0, 153, 153));
+        jLabelTituloSalud.setText("Pociones de salud");
+        jInternalFrame1.getContentPane().add(jLabelTituloSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
+
+        jLabelTituloFuerza.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jLabelTituloFuerza.setForeground(new java.awt.Color(0, 153, 153));
+        jLabelTituloFuerza.setText("Pociones de fuerza");
+        jInternalFrame1.getContentPane().add(jLabelTituloFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel2.setText("Armas");
+        jInternalFrame1.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, -1, -1));
+
+        jRadioButton1.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(255, 204, 51));
+        jRadioButton1.setText("jRadioButton1");
+        jInternalFrame1.getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 140, -1));
+
+        jRadioButton2.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jRadioButton2.setForeground(new java.awt.Color(255, 204, 51));
+        jRadioButton2.setText("jRadioButton2");
+        jInternalFrame1.getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 140, -1));
+
+        jRadioButton3.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jRadioButton3.setForeground(new java.awt.Color(255, 204, 51));
+        jRadioButton3.setText("jRadioButton3");
+        jInternalFrame1.getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 150, 30));
+
+        jRadioButton4.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jRadioButton4.setForeground(new java.awt.Color(255, 204, 51));
+        jRadioButton4.setText("jRadioButton4");
+        jInternalFrame1.getContentPane().add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 150, 30));
+
+        jRadioButton5.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jRadioButton5.setForeground(new java.awt.Color(255, 204, 51));
+        jRadioButton5.setText("jRadioButton5");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+        jInternalFrame1.getContentPane().add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, 150, -1));
+
+        jRadioButton6.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jRadioButton6.setForeground(new java.awt.Color(255, 204, 51));
+        jRadioButton6.setText("jRadioButton6");
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton6ActionPerformed(evt);
+            }
+        });
+        jInternalFrame1.getContentPane().add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 150, 30));
+
+        jLabelTituloArmadura.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jLabelTituloArmadura.setForeground(new java.awt.Color(0, 153, 153));
+        jLabelTituloArmadura.setText("Armadura y escudos");
+        jInternalFrame1.getContentPane().add(jLabelTituloArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, -1, -1));
+
+        jRadioButton7.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jRadioButton7.setForeground(new java.awt.Color(255, 204, 51));
+        jRadioButton7.setText("jRadioButton7");
+        jInternalFrame1.getContentPane().add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 150, -1));
+
+        jRadioButton8.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jRadioButton8.setForeground(new java.awt.Color(255, 204, 51));
+        jRadioButton8.setText("jRadioButton8");
+        jInternalFrame1.getContentPane().add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, 150, -1));
+
+        jLabel1.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel1.setText("Amuletos de Fortuna");
+        jInternalFrame1.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, -1, -1));
+
+        jRadioButton9.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jRadioButton9.setForeground(new java.awt.Color(255, 204, 51));
+        jRadioButton9.setText("jRadioButton9");
+        jInternalFrame1.getContentPane().add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 150, -1));
+
+        jRadioButton10.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jRadioButton10.setForeground(new java.awt.Color(255, 204, 51));
+        jRadioButton10.setText("jRadioButton10");
+        jInternalFrame1.getContentPane().add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, -1));
+
+        jLabelFondoFrame2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fantasy.png"))); // NOI18N
+        jInternalFrame1.getContentPane().add(jLabelFondoFrame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-870, 0, -1, 670));
+
+        getContentPane().add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 390, 700));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fantasy.png"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, 700));
@@ -139,46 +269,86 @@ Villano cambio5= new Villano();
 cambio5.setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
+
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
     // Cambiar Etiquetas
-    public void cmabiarStatSalud(String cantidad){
+    public void cambiarStatSalud(String cantidad){
         jLabelSalud.setText("Salud: "+cantidad);
     }
     
-    public void cmabiarStatFuerza(String cantidad){
+    public void cambiarStatFuerza(String cantidad){
         jLabelFuerza.setText("Fuerza: "+cantidad);
     }
     
-    public void cmabiarStatAtaque(String cantidad){
+    public void cambiarStatAtaque(String cantidad){
         jLabelAtaque.setText("Ataque: "+cantidad);
     }
     
-    public void cmabiarStatDefensa(String cantidad){
+    public void cambiarStatDefensa(String cantidad){
         jLabelDefensa.setText("Defensa: "+cantidad);
     }
     
-    public void cmabiarStatFortuna(String cantidad){
+    public void cambiarStatFortuna(String cantidad){
         jLabelFortuna.setText("Fortuna: "+cantidad);
     }
     //Dinero
-    public void Transaccion(Item item,Personaje personaje){
+    
+    public void TransaccionCompra(Item item,Personaje personaje){
         int costo=item.getPrecio();
         personaje.setDinero((personaje.getDinero())-costo);
         
     }
+    public void TransaccionVenta(Item item,Personaje personaje){
+        int costo=item.getPrecioVenta();
+        personaje.setDinero((personaje.getDinero())+costo);
+    }
+    
+    //Cambiar etiqueta de dinero
+    public void cambiarDinero(int dinero){
+        //Cambiar a string
+        String cantidad= dinero+"";
+        jLabelRupias.setText("Caramillos: "+cantidad+"R");
+    }
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtonRegresarH;
+    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelAtaque;
     private javax.swing.JLabel jLabelDefensa;
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JLabel jLabelFondoFrame2;
     private javax.swing.JLabel jLabelFortuna;
     private javax.swing.JLabel jLabelFuerza;
+    private javax.swing.JLabel jLabelRupias;
     private javax.swing.JLabel jLabelSalud;
     private javax.swing.JLabel jLabelStatAtaque;
     private javax.swing.JLabel jLabelStatDefensa;
     private javax.swing.JLabel jLabelStatFortuna;
     private javax.swing.JLabel jLabelStatFuerza;
     private javax.swing.JLabel jLabelStatVida;
+    private javax.swing.JLabel jLabelTituloArmadura;
+    private javax.swing.JLabel jLabelTituloFuerza;
+    private javax.swing.JLabel jLabelTituloSalud;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton10;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
+    private javax.swing.JRadioButton jRadioButton9;
     // End of variables declaration//GEN-END:variables
 }

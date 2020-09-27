@@ -49,6 +49,7 @@ public class Villano extends javax.swing.JFrame {
         jLabelAtaque = new javax.swing.JLabel();
         jLabelDefensa = new javax.swing.JLabel();
         jLabelFortuna = new javax.swing.JLabel();
+        jLabelRupias = new javax.swing.JLabel();
         jLabelFondoVillano = new javax.swing.JLabel();
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Dragon.jpg"))); // NOI18N
@@ -167,6 +168,11 @@ public class Villano extends javax.swing.JFrame {
         jLabelFortuna.setText("Fortuna: 10");
         getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 160, 30));
 
+        jLabelRupias.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelRupias.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelRupias.setText("Drabines: 100D");
+        getContentPane().add(jLabelRupias, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 524, 170, 30));
+
         jLabelFondoVillano.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Villian.jpg"))); // NOI18N
         getContentPane().add(jLabelFondoVillano, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 700));
 
@@ -239,6 +245,7 @@ this.dispose();
     private javax.swing.JLabel jLabelFraseVend;
     private javax.swing.JLabel jLabelFuerza;
     private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelRupias;
     private javax.swing.JLabel jLabelSalud;
     private javax.swing.JLabel jLabelStatAtaque;
     private javax.swing.JLabel jLabelStatDefensa;

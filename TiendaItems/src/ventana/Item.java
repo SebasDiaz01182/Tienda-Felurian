@@ -12,13 +12,16 @@ public class Item {
     private int fortuna;
     private int fuerza;
     private int precio;
+    private int precioVenta;
     
-    public Item(String nombre,int salud,int ataque,int defensa,int fortuna){
+    public Item(String nombre,int salud,int ataque,int defensa,int fortuna, int precio, int precioVenta){
     this.nombre = nombre;
     this.salud = salud;
     this.ataque = ataque;
     this.defensa = defensa;
     this.fortuna = fortuna;
+    this.precio = precio;
+    this.precioVenta= precioVenta;
     }
     
     public String getNombre() {
@@ -84,7 +87,15 @@ public class Item {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
+    
+    public int getPrecioVenta() {
+       return precioVenta;
+    }
 
+  
+    public void setPrecioVenta(int precioVenta) {
+        this.precioVenta = precioVenta;
+    }
     //Metodos
   
 }

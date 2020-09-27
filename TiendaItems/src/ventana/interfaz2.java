@@ -50,6 +50,7 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabelAtaque = new javax.swing.JLabel();
         jLabelDefensa = new javax.swing.JLabel();
         jLabelFortuna = new javax.swing.JLabel();
+        jLabelDinero = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -183,6 +184,11 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabelFortuna.setText("Fortuna: 10");
         getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 150, 30));
 
+        jLabelDinero.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jLabelDinero.setForeground(new java.awt.Color(255, 255, 102));
+        jLabelDinero.setText("Drabines: 100D");
+        getContentPane().add(jLabelDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 570, 170, 20));
+
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cuarto de armas.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 730));
 
@@ -273,6 +279,7 @@ this.dispose();
     private javax.swing.JButton jButtonVender;
     private javax.swing.JLabel jLabelAtaque;
     private javax.swing.JLabel jLabelDefensa;
+    private javax.swing.JLabel jLabelDinero;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelFortuna;
     private javax.swing.JLabel jLabelFraseC;
