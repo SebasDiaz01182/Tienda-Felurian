@@ -5,10 +5,11 @@
  */
 package ventana;
 
-/**
- *
- * @author DELL
- */
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
 public class Tienda extends javax.swing.JFrame {
 
     /**
@@ -74,51 +75,51 @@ public class Tienda extends javax.swing.JFrame {
 
         jLabelStatVida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CorazonFn2.png"))); // NOI18N
         jLabelStatVida.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatVida, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, 40));
+        getContentPane().add(jLabelStatVida, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 630, -1, 40));
 
         jLabelStatFuerza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/puño.jpg"))); // NOI18N
         jLabelStatFuerza.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 50, 40));
+        getContentPane().add(jLabelStatFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 630, 50, 40));
 
         jLabelStatAtaque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Espadafin.png"))); // NOI18N
         jLabelStatAtaque.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, -1, 40));
+        getContentPane().add(jLabelStatAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 630, -1, 40));
 
         jLabelStatDefensa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Armadura.png"))); // NOI18N
         jLabelStatDefensa.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 460, 50, 40));
+        getContentPane().add(jLabelStatDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 630, 50, 40));
 
         jLabelStatFortuna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Amuleto_1.png"))); // NOI18N
         jLabelStatFortuna.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 50, 40));
+        getContentPane().add(jLabelStatFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 630, 50, 40));
 
         jLabelSalud.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelSalud.setForeground(new java.awt.Color(255, 204, 51));
         jLabelSalud.setText("Salud: 100");
-        getContentPane().add(jLabelSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+        getContentPane().add(jLabelSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 670, -1, -1));
 
         jLabelFuerza.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelFuerza.setForeground(new java.awt.Color(255, 204, 51));
         jLabelFuerza.setText("Fuerza: 60");
-        getContentPane().add(jLabelFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, -1, -1));
+        getContentPane().add(jLabelFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 670, -1, -1));
 
         jLabelAtaque.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelAtaque.setForeground(new java.awt.Color(255, 204, 51));
         jLabelAtaque.setText("Ataque: 50");
-        getContentPane().add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 500, -1, -1));
+        getContentPane().add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 670, -1, -1));
 
         jLabelDefensa.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelDefensa.setForeground(new java.awt.Color(255, 204, 51));
         jLabelDefensa.setText("Defensa: 30");
-        getContentPane().add(jLabelDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 500, -1, -1));
+        getContentPane().add(jLabelDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 670, -1, -1));
 
         jLabelFortuna.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelFortuna.setForeground(new java.awt.Color(255, 204, 51));
         jLabelFortuna.setText("Fortuna: 10");
-        getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, -1, -1));
+        getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 670, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cantina2.png"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 540));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fantasy.png"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -159,38 +160,21 @@ this.dispose();
         jLabelFortuna.setText("Fortuna: "+cantidad);
     }
     
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
+    public class main {
+    public void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Tienda().setVisible(true);
             }
         });
+        HttpClient client=HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://jsonplaceholder.typicode.com/albums")).build();
+        client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+            .thenApply(HttpResponse::body)
+            .thenAccept(System.out::println)
+            .join();
     }
-
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonRegresarH;

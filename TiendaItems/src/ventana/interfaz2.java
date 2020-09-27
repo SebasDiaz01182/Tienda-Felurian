@@ -45,7 +45,6 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabelStatsAtaque = new javax.swing.JLabel();
         jLabelStatDefensa = new javax.swing.JLabel();
         jLabelStatFortuna = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabelSalud = new javax.swing.JLabel();
         jLabelFuerza = new javax.swing.JLabel();
         jLabelAtaque = new javax.swing.JLabel();
@@ -157,10 +156,6 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabelStatFortuna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Amuleto_1.png"))); // NOI18N
         jLabelStatFortuna.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
         getContentPane().add(jLabelStatFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 2, 24)); // NOI18N
-        jLabel1.setText("\\PRUEBA");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, -1, -1));
 
         jLabelSalud.setBackground(new java.awt.Color(153, 153, 153));
         jLabelSalud.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
@@ -280,7 +275,6 @@ this.dispose();
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JButton jButtonVender;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelAtaque;
     private javax.swing.JLabel jLabelDefensa;
     private javax.swing.JLabel jLabelFondo;
