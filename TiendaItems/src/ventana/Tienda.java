@@ -139,7 +139,7 @@ Villano cambio5= new Villano();
 cambio5.setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
-
+    // Cambiar Etiquetas
     public void cmabiarStatSalud(String cantidad){
         jLabelSalud.setText("Salud: "+cantidad);
     }
@@ -159,7 +159,12 @@ this.dispose();
     public void cmabiarStatFortuna(String cantidad){
         jLabelFortuna.setText("Fortuna: "+cantidad);
     }
-    
+    //Dinero
+    public void Transaccion(Item item,Personaje personaje){
+        int costo=item.getPrecio();
+        personaje.setDinero((personaje.getDinero())-costo);
+        
+    }
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
