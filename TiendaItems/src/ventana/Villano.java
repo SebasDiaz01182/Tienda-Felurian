@@ -205,9 +205,6 @@ cambio6.setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButtonComprarMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
     
     public void cmabiarStatSalud(String cantidad){
         jLabelSalud.setText("Salud: "+cantidad);
