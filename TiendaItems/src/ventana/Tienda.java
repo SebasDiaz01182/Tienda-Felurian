@@ -160,21 +160,7 @@ this.dispose();
         jLabelFortuna.setText("Fortuna: "+cantidad);
     }
     
-    public class main {
-    public void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Tienda().setVisible(true);
-            }
-        });
-        HttpClient client=HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://jsonplaceholder.typicode.com/albums")).build();
-        client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
-            .thenApply(HttpResponse::body)
-            .thenAccept(System.out::println)
-            .join();
-    }
-    }
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonRegresarH;
