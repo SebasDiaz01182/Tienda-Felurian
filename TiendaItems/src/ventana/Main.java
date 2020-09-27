@@ -1,13 +1,19 @@
 
 package ventana;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.List;
 
 public class Main {
-    public static void main(String args[]) {
+    private static final String POSTS_API_URL = "https://jsonplaceholder.typicode.com/posts";
+    public static void main(String args[]) throws IOException, InterruptedException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -37,12 +43,19 @@ public class Main {
                 new interfaz().setVisible(true);
             }
         });
-        HttpClient client=HttpClient.newHttpClient();
-        HttpRequest request = HttpRequest.newBuilder().uri(URI.create("https://jsonplaceholder.typicode.com/albums")).build();
-        client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
-            .thenApply(HttpResponse::body)
-            .thenAccept(System.out::println)
-            .join();
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .GET()
+                .header("accept","application/json")
+                .uri(URI.create(POSTS_API_URL))
+                .build();
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        
+        //Realizar el Parse del JSON
+        ObjectMapper  mapper = new ObjectMapper();
+        List<Post> posts = mapper.readValue(response.body(),new TypeReference<List<Post>>() {});
+        
+        posts.forEach(System.out::println);
     }
-    }
+}
 
