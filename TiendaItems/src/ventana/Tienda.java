@@ -9,7 +9,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-
+import javax.swing.DefaultListModel;
 public class Tienda extends javax.swing.JFrame {
 
     /**
@@ -29,6 +29,7 @@ public class Tienda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jButtonRegresarH = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabelStatVida = new javax.swing.JLabel();
@@ -43,15 +44,9 @@ public class Tienda extends javax.swing.JFrame {
         jLabelFortuna = new javax.swing.JLabel();
         jLabelRupias = new javax.swing.JLabel();
         jInternalFrame1 = new javax.swing.JInternalFrame();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabelTituloSalud = new javax.swing.JLabel();
-        jLabelTituloFuerza = new javax.swing.JLabel();
+        jButtonComprar = new javax.swing.JButton();
+        jButtonVender = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
         jRadioButton6 = new javax.swing.JRadioButton();
         jLabelTituloArmadura = new javax.swing.JLabel();
@@ -61,6 +56,10 @@ public class Tienda extends javax.swing.JFrame {
         jRadioButton9 = new javax.swing.JRadioButton();
         jRadioButton10 = new javax.swing.JRadioButton();
         jLabelFondoFrame2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        modelo= new DefaultListModel();
+        jList1 = new javax.swing.JList<>();
+        txtnom = new javax.swing.JTextField();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -146,53 +145,39 @@ public class Tienda extends javax.swing.JFrame {
         jInternalFrame1.setVisible(true);
         jInternalFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(51, 51, 0));
-        jButton2.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 204, 51));
-        jButton2.setText("Comprar");
-        jInternalFrame1.getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 640, 190, -1));
+        jButtonComprar.setBackground(new java.awt.Color(51, 51, 0));
+        jButtonComprar.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jButtonComprar.setForeground(new java.awt.Color(255, 204, 51));
+        jButtonComprar.setText("Comprar");
+        jButtonComprar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonComprarActionPerformed(evt);
+            }
+        });
+        jInternalFrame1.getContentPane().add(jButtonComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 640, 190, -1));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 204, 51));
-        jButton3.setText("Vender");
-        jInternalFrame1.getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 190, -1));
-
-        jLabelTituloSalud.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
-        jLabelTituloSalud.setForeground(new java.awt.Color(0, 153, 153));
-        jLabelTituloSalud.setText("Pociones de salud");
-        jInternalFrame1.getContentPane().add(jLabelTituloSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 40, -1, -1));
-
-        jLabelTituloFuerza.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
-        jLabelTituloFuerza.setForeground(new java.awt.Color(0, 153, 153));
-        jLabelTituloFuerza.setText("Pociones de fuerza");
-        jInternalFrame1.getContentPane().add(jLabelTituloFuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, -1, -1));
+        jButtonVender.setBackground(new java.awt.Color(0, 0, 0));
+        jButtonVender.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
+        jButtonVender.setForeground(new java.awt.Color(255, 204, 51));
+        jButtonVender.setText("Vender");
+        jButtonVender.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonVenderMouseClicked(evt);
+            }
+        });
+        jButtonVender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVenderActionPerformed(evt);
+            }
+        });
+        jInternalFrame1.getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 640, 190, -1));
 
         jLabel2.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 153));
         jLabel2.setText("Armas");
-        jInternalFrame1.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, -1, -1));
+        jInternalFrame1.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
 
-        jRadioButton1.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton1.setText("jRadioButton1");
-        jInternalFrame1.getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 140, -1));
-
-        jRadioButton2.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton2.setText("jRadioButton2");
-        jInternalFrame1.getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 140, -1));
-
-        jRadioButton3.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton3.setText("jRadioButton3");
-        jInternalFrame1.getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 150, 30));
-
-        jRadioButton4.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
-        jRadioButton4.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton4.setText("jRadioButton4");
-        jInternalFrame1.getContentPane().add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 150, 30));
-
+        buttonGroup2.add(jRadioButton5);
         jRadioButton5.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton5.setForeground(new java.awt.Color(255, 204, 51));
         jRadioButton5.setText("jRadioButton5");
@@ -201,8 +186,9 @@ public class Tienda extends javax.swing.JFrame {
                 jRadioButton5ActionPerformed(evt);
             }
         });
-        jInternalFrame1.getContentPane().add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 550, 150, -1));
+        jInternalFrame1.getContentPane().add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 230, -1));
 
+        buttonGroup2.add(jRadioButton6);
         jRadioButton6.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton6.setForeground(new java.awt.Color(255, 204, 51));
         jRadioButton6.setText("jRadioButton6");
@@ -211,45 +197,55 @@ public class Tienda extends javax.swing.JFrame {
                 jRadioButton6ActionPerformed(evt);
             }
         });
-        jInternalFrame1.getContentPane().add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 150, 30));
+        jInternalFrame1.getContentPane().add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 230, 30));
 
         jLabelTituloArmadura.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jLabelTituloArmadura.setForeground(new java.awt.Color(0, 153, 153));
         jLabelTituloArmadura.setText("Armadura y escudos");
-        jInternalFrame1.getContentPane().add(jLabelTituloArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, -1, -1));
+        jInternalFrame1.getContentPane().add(jLabelTituloArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
+        buttonGroup2.add(jRadioButton7);
         jRadioButton7.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton7.setForeground(new java.awt.Color(255, 204, 51));
         jRadioButton7.setText("jRadioButton7");
-        jInternalFrame1.getContentPane().add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 150, -1));
+        jInternalFrame1.getContentPane().add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 230, -1));
 
+        buttonGroup2.add(jRadioButton8);
         jRadioButton8.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton8.setForeground(new java.awt.Color(255, 204, 51));
         jRadioButton8.setText("jRadioButton8");
-        jInternalFrame1.getContentPane().add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 550, 150, -1));
+        jInternalFrame1.getContentPane().add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 230, -1));
 
         jLabel1.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("Amuletos de Fortuna");
-        jInternalFrame1.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 480, -1, -1));
+        jInternalFrame1.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, -1, -1));
 
+        buttonGroup2.add(jRadioButton9);
         jRadioButton9.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton9.setForeground(new java.awt.Color(255, 204, 51));
         jRadioButton9.setText("jRadioButton9");
-        jInternalFrame1.getContentPane().add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, 150, -1));
+        jInternalFrame1.getContentPane().add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 230, -1));
 
+        buttonGroup2.add(jRadioButton10);
         jRadioButton10.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton10.setForeground(new java.awt.Color(255, 204, 51));
         jRadioButton10.setText("jRadioButton10");
-        jInternalFrame1.getContentPane().add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, -1, -1));
+        jInternalFrame1.getContentPane().add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 230, -1));
 
         jLabelFondoFrame2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fantasy.png"))); // NOI18N
-        jInternalFrame1.getContentPane().add(jLabelFondoFrame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-870, 0, -1, 670));
+        jInternalFrame1.getContentPane().add(jLabelFondoFrame2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-860, -10, -1, 670));
 
         getContentPane().add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 0, 390, 700));
 
+        jList1.setModel(modelo);
+        jScrollPane1.setViewportView(jList1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, 120, 120));
+        getContentPane().add(txtnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 120, -1));
+
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fantasy.png"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, -1, 700));
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -277,6 +273,27 @@ this.dispose();
     private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton5ActionPerformed
+// Llamar la función vender
+    private void jButtonVenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonVenderMouseClicked
+        String item= "Hola manco";
+        Vender(item);
+    }//GEN-LAST:event_jButtonVenderMouseClicked
+
+    private void jButtonComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarActionPerformed
+    modelo.addElement(txtnom.getText());
+    txtnom.setText("");
+    txtnom.requestFocus();
+    jList1.setSelectedIndex(0);
+    }//GEN-LAST:event_jButtonComprarActionPerformed
+
+    private void jButtonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderActionPerformed
+        if(modelo.getSize()>0)
+        {
+            int n = jList1.getSelectedIndex();
+            modelo.removeElementAt(n);
+            jList1.setSelectedIndex(0);
+        }
+    }//GEN-LAST:event_jButtonVenderActionPerformed
     // Cambiar Etiquetas
     public void cambiarStatSalud(String cantidad){
         jLabelSalud.setText("Salud: "+cantidad);
@@ -315,12 +332,17 @@ this.dispose();
         String cantidad= dinero+"";
         jLabelRupias.setText("Caramillos: "+cantidad+"R");
     }
+    //
+    public void Vender(String item){
+        
+    }
   
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonComprar;
     private javax.swing.JButton jButtonRegresarH;
+    private javax.swing.JButton jButtonVender;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -338,17 +360,15 @@ this.dispose();
     private javax.swing.JLabel jLabelStatFuerza;
     private javax.swing.JLabel jLabelStatVida;
     private javax.swing.JLabel jLabelTituloArmadura;
-    private javax.swing.JLabel jLabelTituloFuerza;
-    private javax.swing.JLabel jLabelTituloSalud;
-    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JList<String> jList1;
+    private DefaultListModel modelo;
     private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JRadioButton jRadioButton9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField txtnom;
     // End of variables declaration//GEN-END:variables
 }
