@@ -9,6 +9,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -18,8 +19,15 @@ public class Main {
     private static final String POSTS_API_URL = "https://jsonplaceholder.typicode.com/posts";
     
     //Funcionalidades
-    
-    
+    public static ArrayList TransformarFinal(ArrayList<Item> listaItems){
+        (listaItems.get(0)).setNombre("Espada "+(listaItems.get(0)).getNombre());(listaItems.get(0)).setAtaque(35);
+        (listaItems.get(1)).setNombre("Hacha "+(listaItems.get(1)).getNombre());(listaItems.get(1)).setAtaque(50);
+        (listaItems.get(2)).setNombre("Peto "+(listaItems.get(2)).getNombre());(listaItems.get(2)).setDefensa(70);
+        (listaItems.get(3)).setNombre("Escudo " +(listaItems.get(3)).getNombre());(listaItems.get(3)).setDefensa(65);
+        (listaItems.get(4)).setNombre("Amuleto de "+(listaItems.get(4)).getNombre());(listaItems.get(4)).setFuerza(30);
+        (listaItems.get(5)).setNombre("Collar "+(listaItems.get(5)).getNombre());(listaItems.get(5)).setSalud(50);
+        return listaItems;
+    }
     public static int TransformarPrecio(int precioViejo){
         if((precioViejo%2)==0){
             return precioViejo * 40;
@@ -34,10 +42,8 @@ public class Main {
     }
     
     public static String TransformarNombre(String nombreViejo){
-        String espacio = " ";
-        int indiceAux = nombreViejo.indexOf(espacio);
-        int indiceFinal = nombreViejo.indexOf(espacio, indiceAux);
-        String nombreNuevo = nombreViejo.substring(indiceAux, indiceFinal);
+        int indiceAux = nombreViejo.indexOf(" ");
+        String nombreNuevo = nombreViejo.substring(0,indiceAux);
         return nombreNuevo;
     }
     
@@ -92,12 +98,14 @@ public class Main {
         //Realizar el Parse del JSON
         ObjectMapper  mapper = new ObjectMapper();
         List<Post> postsList = mapper.readValue(response.body(),new TypeReference<List<Post>>() {});
-        List<Item> listaItems = null;
-        for(int e=0;e!=6;e++){
+        //Creacion de la lista de Items
+        ArrayList<Item> listaItems = new ArrayList(6);
+        for(int e=13;e<=18;e++){
             Item itemAux = Transformar(postsList,e);
-            listaItems.add(e, itemAux);
+            listaItems.add(itemAux);
         }
-        
+        //Transformar a Objetos Listos para Usar
+        ArrayList<Item> itemsFinales = TransformarFinal(listaItems);
     }
 }
 
