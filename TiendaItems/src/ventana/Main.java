@@ -12,7 +12,45 @@ import java.net.http.HttpResponse;
 import java.util.List;
 
 public class Main {
+    
+    
+    //Variable para el API
     private static final String POSTS_API_URL = "https://jsonplaceholder.typicode.com/posts";
+    
+    //Funcionalidades
+    
+    
+    public static int TransformarPrecio(int precioViejo){
+        if((precioViejo%2)==0){
+            return precioViejo * 40;
+        }else{
+            if(precioViejo%10==5){
+            return precioViejo * 50;
+            }
+            else{
+            return  precioViejo * 70;
+            }
+        }
+    }
+    
+    public static String TransformarNombre(String nombreViejo){
+        String espacio = " ";
+        int indiceAux = nombreViejo.indexOf(espacio);
+        int indiceFinal = nombreViejo.indexOf(espacio, indiceAux);
+        String nombreNuevo = nombreViejo.substring(indiceAux, indiceFinal);
+        return nombreNuevo;
+    }
+    
+    public static Item Transformar(List<Post> postsList,int num){
+        Post auxiliar = postsList.get(num);
+        String nombreNuevo = TransformarNombre(auxiliar.getTitle());
+        int precioNuevo = TransformarPrecio(auxiliar.getId());
+        Item itemEj = new Item(nombreNuevo,0,0,0,0, precioNuevo, precioNuevo/2);
+        return itemEj;
+    }
+    
+    
+    //Metodo Main
     public static void main(String args[]) throws IOException, InterruptedException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -53,9 +91,13 @@ public class Main {
         
         //Realizar el Parse del JSON
         ObjectMapper  mapper = new ObjectMapper();
-        List<Post> posts = mapper.readValue(response.body(),new TypeReference<List<Post>>() {});
+        List<Post> postsList = mapper.readValue(response.body(),new TypeReference<List<Post>>() {});
+        List<Item> listaItems = null;
+        for(int e=0;e!=6;e++){
+            Item itemAux = Transformar(postsList,e);
+            listaItems.add(e, itemAux);
+        }
         
-        posts.forEach(System.out::println);
     }
 }
 
