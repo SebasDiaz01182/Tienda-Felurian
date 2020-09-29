@@ -53,7 +53,7 @@ public class Tienda extends javax.swing.JFrame {
         Post auxiliar = postsList.get(num);
         String nombreNuevo = TransformarNombre(auxiliar.getTitle());
         int precioNuevo = TransformarPrecio(auxiliar.getId());
-        Item itemEj = new Item(nombreNuevo,0,0,0,0, precioNuevo, precioNuevo/2);
+        Item itemEj = new Item(nombreNuevo,0,0,0,0, precioNuevo, precioNuevo/2,false);
         return itemEj;
     }
     public static ArrayList<Item> CrearListaItems(List<Post> postsList){
@@ -267,6 +267,11 @@ public class Tienda extends javax.swing.JFrame {
                 jRadioButton9MouseClicked(evt);
             }
         });
+        jRadioButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton9ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jRadioButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 320, 230, -1));
 
         jLabelTituloArmadura.setFont(new java.awt.Font("Harrington", 0, 36)); // NOI18N
@@ -335,12 +340,22 @@ public class Tienda extends javax.swing.JFrame {
         jButtonDesequipar.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jButtonDesequipar.setForeground(new java.awt.Color(255, 204, 102));
         jButtonDesequipar.setText("Desequipar");
+        jButtonDesequipar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDesequiparActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonDesequipar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, 160, 40));
 
         jButtonEquipar.setBackground(new java.awt.Color(0, 51, 51));
         jButtonEquipar.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jButtonEquipar.setForeground(new java.awt.Color(255, 204, 102));
         jButtonEquipar.setText("Equipar");
+        jButtonEquipar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEquiparActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonEquipar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 160, 40));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fantasy.png"))); // NOI18N
@@ -372,6 +387,18 @@ public class Tienda extends javax.swing.JFrame {
         }
         return itemsGlobales.get(y);
     }
+    public static boolean VerificarEquipado(String buscar,ArrayList<Item> itemsEquipados){
+        int y = 0;
+        while(y<5){
+        Item corriendo = itemsEquipados.get(y);
+        if((corriendo.getNombre()).equals(buscar)){
+            return true;
+        }else{
+            y+=1;
+        }
+        }
+        return false;
+    }
     private void jButtonComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarActionPerformed
 
     String buscar = txtnom.getText();
@@ -399,6 +426,8 @@ public class Tienda extends javax.swing.JFrame {
             int dineroFinal = personaje.getDinero() + seleccionado.getPrecioVenta();
             cambiarDinero(dineroFinal);
             personaje.setDinero(dineroFinal);
+            personaje.QuitarStats(seleccionado);
+            cambiarEtiquetas();
             modelo.removeElementAt(n);
             jList1.setSelectedIndex(0);
         }
@@ -445,26 +474,48 @@ public class Tienda extends javax.swing.JFrame {
     private void Armaboton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Armaboton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Armaboton1ActionPerformed
+
+    private void jButtonEquiparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEquiparActionPerformed
+        if(modelo.getSize()>0)
+        {
+            int n = jList1.getSelectedIndex();
+            String eliminar = (modelo.get(n))+"";
+            Item seleccionado = BuscarItem(eliminar,itemsGlobales);
+            if(seleccionado.isEquipado()){
+                JOptionPane.showMessageDialog(null,"Error,el item ya ha sido equipado.");
+            }else{
+                personaje.AplicarStats(seleccionado);
+                cambiarEtiquetas();
+                seleccionado.setEquipado(true);
+                jList1.setSelectedIndex(0);
+            }
+        }
+    }//GEN-LAST:event_jButtonEquiparActionPerformed
+
+    private void jButtonDesequiparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDesequiparActionPerformed
+        if(modelo.getSize()>0){
+            int n = jList1.getSelectedIndex();
+            String eliminar = (modelo.get(n))+"";
+            Item seleccionado = BuscarItem(eliminar,itemsGlobales);
+            personaje.QuitarStats(seleccionado);
+            cambiarEtiquetas();
+            seleccionado.setEquipado(false);
+            jList1.setSelectedIndex(0);
+        }
+    }//GEN-LAST:event_jButtonDesequiparActionPerformed
+
+    private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton9ActionPerformed
     // Cambiar Etiquetas
-    public void cambiarStatSalud(String cantidad){
-        jLabelSalud.setText("Salud: "+cantidad);
+    public void cambiarEtiquetas(){
+        jLabelSalud.setText("Salud: "+personaje.getSalud()+"");
+        jLabelFuerza.setText("Fuerza: "+personaje.getFuerza()+"");
+        jLabelAtaque.setText("Ataque: "+personaje.getAtaque()+"");
+        jLabelDefensa.setText("Defensa: "+personaje.getDefensa()+"");
+        jLabelFortuna.setText("Fortuna: "+personaje.getFortuna()+"");
     }
     
-    public void cambiarStatFuerza(String cantidad){
-        jLabelFuerza.setText("Fuerza: "+cantidad);
-    }
-    
-    public void cambiarStatAtaque(String cantidad){
-        jLabelAtaque.setText("Ataque: "+cantidad);
-    }
-    
-    public void cambiarStatDefensa(String cantidad){
-        jLabelDefensa.setText("Defensa: "+cantidad);
-    }
-    
-    public void cambiarStatFortuna(String cantidad){
-        jLabelFortuna.setText("Fortuna: "+cantidad);
-    }
     //Dinero
     
     public void TransaccionCompra(Item item,Personaje personaje){
@@ -503,6 +554,7 @@ public class Tienda extends javax.swing.JFrame {
         ObjectMapper  mapper = new ObjectMapper();
         List<Post> postsList = mapper.readValue(response.body(),new TypeReference<List<Post>>() {});
         itemsGlobales = CrearListaItems(postsList);
+        
         
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

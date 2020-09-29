@@ -13,8 +13,9 @@ public class Item {
     private int fuerza;
     private int precio;
     private int precioVenta;
+    private boolean equipado;
     
-    public Item(String nombre,int salud,int ataque,int defensa,int fortuna, int precio, int precioVenta){
+    public Item(String nombre,int salud,int ataque,int defensa,int fortuna, int precio, int precioVenta,boolean equipado){
     this.nombre = nombre;
     this.salud = salud;
     this.ataque = ataque;
@@ -22,6 +23,7 @@ public class Item {
     this.fortuna = fortuna;
     this.precio = precio;
     this.precioVenta= precioVenta;
+    this.equipado = false;
     }
     
     public String getNombre() {
@@ -96,6 +98,13 @@ public class Item {
     public void setPrecioVenta(int precioVenta) {
         this.precioVenta = precioVenta;
     }
-    //Metodos
+    public boolean isEquipado() {
+        return equipado;
+    }
+
+   
+    public void setEquipado(boolean equipado) {
+        this.equipado = equipado;
+    }
   
 }
