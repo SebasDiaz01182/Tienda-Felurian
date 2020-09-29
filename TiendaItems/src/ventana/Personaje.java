@@ -13,7 +13,16 @@ public class Personaje {
     private int fortuna;
     private int dinero;
     private int fuerza;
-   
+    
+    public Personaje(int salud,int ataque,int defensa, int fortuna, int dinero,int fuerza){
+    this.salud=salud;
+    this.ataque=ataque;
+    this.defensa=defensa;
+    this.fortuna=fortuna;
+    this.dinero=dinero;
+    this.fuerza=fuerza;
+    }
+    
     public int getSalud() {
         return salud;
     }

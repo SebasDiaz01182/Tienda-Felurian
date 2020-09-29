@@ -15,6 +15,7 @@ import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 public class Tienda extends javax.swing.JFrame {
 
@@ -34,14 +35,11 @@ public class Tienda extends javax.swing.JFrame {
     
     public static int TransformarPrecio(int precioViejo){
         if((precioViejo%2)==0){
-            return precioViejo * 40;
+            return precioViejo*20;
+        }else if((precioViejo%10)==5){
+            return precioViejo*30;
         }else{
-            if(precioViejo%10==5){
-            return precioViejo * 50;
-            }
-            else{
-            return  precioViejo * 70;
-            }
+            return precioViejo*50;
         }
     }
     
@@ -57,6 +55,18 @@ public class Tienda extends javax.swing.JFrame {
         int precioNuevo = TransformarPrecio(auxiliar.getId());
         Item itemEj = new Item(nombreNuevo,0,0,0,0, precioNuevo, precioNuevo/2);
         return itemEj;
+    }
+    public static ArrayList<Item> CrearListaItems(List<Post> postsList){
+        //Creacion de la lista de Items
+        ArrayList<Item> listaItems = new ArrayList(6);
+        for(int e=13;e<=18;e++){
+            Item itemAux = Transformar(postsList,e);
+            listaItems.add(itemAux);
+        }
+        //Transformar a Objetos Listos para Usar
+         ArrayList<Item> itemsFinales = TransformarFinal(listaItems);
+         return itemsFinales;
+    
     }
 
     public Tienda() {
@@ -149,8 +159,8 @@ public class Tienda extends javax.swing.JFrame {
 
         jLabelRupias.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jLabelRupias.setForeground(new java.awt.Color(0, 153, 153));
-        jLabelRupias.setText("Drabines: 100D");
-        getContentPane().add(jLabelRupias, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 170, 30));
+        jLabelRupias.setText("Drabines: 1000D");
+        getContentPane().add(jLabelRupias, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 180, 30));
 
         jList1.setModel(modelo);
         jList1.setBackground(new java.awt.Color(84, 69, 55));
@@ -330,44 +340,72 @@ public class Tienda extends javax.swing.JFrame {
     private void jButtonVenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonVenderMouseClicked
 
     }//GEN-LAST:event_jButtonVenderMouseClicked
-
+    public static Item BuscarItem(String buscar,ArrayList<Item> itemsGlobales){
+        int y = 0;
+        while(y<5){
+        Item corriendo = itemsGlobales.get(y);
+        if((corriendo.getNombre()).equals(buscar)){
+            break;
+        }else{
+            y+=1;
+        }
+        }
+        return itemsGlobales.get(y);
+    }
     private void jButtonComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarActionPerformed
-    modelo.addElement(txtnom.getText());
-    txtnom.setText("");
-    jList1.setSelectedIndex(0);
+
+    String buscar = txtnom.getText();
+    Item seleccionado = BuscarItem(buscar,itemsGlobales);
+    int dineroFinal = personaje.getDinero()- seleccionado.getPrecio(); 
+    if(dineroFinal>=0){
+        modelo.addElement(txtnom.getText());
+        txtnom.setText("");
+        jList1.setSelectedIndex(0);
+        cambiarDinero(dineroFinal);
+        personaje.setDinero(dineroFinal);
+    }else{
+        JOptionPane.showMessageDialog(null,"Error, los drabines no son suficientes.");
+    }
+    
+    
     }//GEN-LAST:event_jButtonComprarActionPerformed
 
     private void jButtonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderActionPerformed
         if(modelo.getSize()>0)
         {
             int n = jList1.getSelectedIndex();
+            String eliminar = (modelo.get(n))+"";
+            Item seleccionado = BuscarItem(eliminar,itemsGlobales);
+            int dineroFinal = personaje.getDinero() + seleccionado.getPrecioVenta();
+            cambiarDinero(dineroFinal);
+            personaje.setDinero(dineroFinal);
             modelo.removeElementAt(n);
             jList1.setSelectedIndex(0);
         }
     }//GEN-LAST:event_jButtonVenderActionPerformed
 
     private void Armaboton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Armaboton1MouseClicked
-        txtnom.setText("Espada Voluptatem");
+        txtnom.setText("Espada voluptatem");
     }//GEN-LAST:event_Armaboton1MouseClicked
 
     private void Armasboton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Armasboton2MouseClicked
-        txtnom.setText("Hacha Eveniet");
+        txtnom.setText("Hacha eveniet");
     }//GEN-LAST:event_Armasboton2MouseClicked
 
     private void jRadioButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton9MouseClicked
-        txtnom.setText("Peto Sint");
+        txtnom.setText("Peto sint");
     }//GEN-LAST:event_jRadioButton9MouseClicked
 
     private void jRadioButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton10MouseClicked
-        txtnom.setText("Escudo Fugit");
+        txtnom.setText("Escudo fugit");
     }//GEN-LAST:event_jRadioButton10MouseClicked
 
     private void jRadioButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton5MouseClicked
-        txtnom.setText("Amuleto Voluptate");
+        txtnom.setText("Amuleto de voluptate");
     }//GEN-LAST:event_jRadioButton5MouseClicked
 
     private void jRadioButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton8MouseClicked
-        txtnom.setText("Collar Adipisci");
+        txtnom.setText("Collar adipisci");
     }//GEN-LAST:event_jRadioButton8MouseClicked
 
     private void txtnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnomActionPerformed
@@ -417,7 +455,7 @@ public class Tienda extends javax.swing.JFrame {
     public void cambiarDinero(int dinero){
         //Cambiar a string
         String cantidad= dinero+"";
-        jLabelRupias.setText("Caramillos: "+cantidad+"R");
+        jLabelRupias.setText("Drabines: "+cantidad+"D");
     }
       public static void main(String args[]) throws IOException, InterruptedException {
         
@@ -438,14 +476,8 @@ public class Tienda extends javax.swing.JFrame {
         //Realizar el Parse del JSON
         ObjectMapper  mapper = new ObjectMapper();
         List<Post> postsList = mapper.readValue(response.body(),new TypeReference<List<Post>>() {});
-        //Creacion de la lista de Items
-        ArrayList<Item> listaItems = new ArrayList(6);
-        for(int e=13;e<=18;e++){
-            Item itemAux = Transformar(postsList,e);
-            listaItems.add(itemAux);
-        }
-        //Transformar a Objetos Listos para Usar
-         ArrayList<Item> itemsFinales = TransformarFinal(listaItems);
+        itemsGlobales = CrearListaItems(postsList);
+        
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JRadioButton Armaboton1;
@@ -479,5 +511,7 @@ public class Tienda extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtnom;
     // End of variables declaration//GEN-END:variables
+    public static ArrayList<Item> itemsGlobales ;
+    public static Personaje personaje = new Personaje(100,50,30,10,1000,60);
 } 
 
