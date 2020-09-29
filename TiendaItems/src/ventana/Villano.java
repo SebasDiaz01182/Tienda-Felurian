@@ -158,8 +158,8 @@ public class Villano extends javax.swing.JFrame {
 
         jLabelRupias.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jLabelRupias.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelRupias.setText("Drabines: 100D");
-        getContentPane().add(jLabelRupias, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 524, 170, 30));
+        jLabelRupias.setText("Drabines: 1000D");
+        getContentPane().add(jLabelRupias, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 524, 180, 30));
 
         jLabelFondoVillano.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Villian.jpg"))); // NOI18N
         getContentPane().add(jLabelFondoVillano, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 700));

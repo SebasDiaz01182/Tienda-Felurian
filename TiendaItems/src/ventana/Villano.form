@@ -334,11 +334,11 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Drabines: 100D"/>
+        <Property name="text" type="java.lang.String" value="Drabines: 1000D"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="90" y="524" width="170" height="30"/>
+          <AbsoluteConstraints x="90" y="524" width="180" height="30"/>
         </Constraint>
       </Constraints>
     </Component>

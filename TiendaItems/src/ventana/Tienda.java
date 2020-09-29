@@ -27,7 +27,7 @@ public class Tienda extends javax.swing.JFrame {
         (listaItems.get(0)).setNombre("Espada "+(listaItems.get(0)).getNombre());(listaItems.get(0)).setAtaque(35);
         (listaItems.get(1)).setNombre("Hacha "+(listaItems.get(1)).getNombre());(listaItems.get(1)).setAtaque(50);
         (listaItems.get(2)).setNombre("Peto "+(listaItems.get(2)).getNombre());(listaItems.get(2)).setDefensa(70);
-        (listaItems.get(3)).setNombre("Escudo " +(listaItems.get(3)).getNombre());(listaItems.get(3)).setDefensa(65);
+        (listaItems.get(3)).setNombre("Escudo " +(listaItems.get(3)).getNombre());(listaItems.get(3)).setDefensa(40);
         (listaItems.get(4)).setNombre("Amuleto de "+(listaItems.get(4)).getNombre());(listaItems.get(4)).setFuerza(30);
         (listaItems.get(5)).setNombre("Collar "+(listaItems.get(5)).getNombre());(listaItems.get(5)).setSalud(50);
         return listaItems;
@@ -106,6 +106,8 @@ public class Tienda extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabelTituloInv = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jButtonDesequipar = new javax.swing.JButton();
+        jButtonEquipar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -160,7 +162,7 @@ public class Tienda extends javax.swing.JFrame {
         jLabelRupias.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jLabelRupias.setForeground(new java.awt.Color(0, 153, 153));
         jLabelRupias.setText("Drabines: 1000D");
-        getContentPane().add(jLabelRupias, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 570, 180, 30));
+        getContentPane().add(jLabelRupias, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 180, 30));
 
         jList1.setModel(modelo);
         jList1.setBackground(new java.awt.Color(84, 69, 55));
@@ -169,7 +171,7 @@ public class Tienda extends javax.swing.JFrame {
         jList1.setToolTipText("");
         jScrollPane1.setViewportView(jList1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 210, 190));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 210, 190));
 
         txtnom.setBackground(new java.awt.Color(84, 69, 55));
         txtnom.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
@@ -179,7 +181,7 @@ public class Tienda extends javax.swing.JFrame {
                 txtnomActionPerformed(evt);
             }
         });
-        getContentPane().add(txtnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 210, 40));
+        getContentPane().add(txtnom, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 210, 40));
 
         jButtonComprar.setBackground(new java.awt.Color(0, 102, 102));
         jButtonComprar.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
@@ -208,6 +210,7 @@ public class Tienda extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 660, 160, -1));
 
+        jRadioButton8.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup2.add(jRadioButton8);
         jRadioButton8.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton8.setForeground(new java.awt.Color(255, 204, 51));
@@ -219,6 +222,7 @@ public class Tienda extends javax.swing.JFrame {
         });
         getContentPane().add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 570, 230, -1));
 
+        jRadioButton5.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup2.add(jRadioButton5);
         jRadioButton5.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton5.setForeground(new java.awt.Color(255, 204, 51));
@@ -241,6 +245,7 @@ public class Tienda extends javax.swing.JFrame {
         jLabelTitulo.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 102, 102)));
         getContentPane().add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 460, -1, -1));
 
+        jRadioButton10.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup2.add(jRadioButton10);
         jRadioButton10.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton10.setForeground(new java.awt.Color(255, 204, 51));
@@ -252,6 +257,7 @@ public class Tienda extends javax.swing.JFrame {
         });
         getContentPane().add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 370, 230, -1));
 
+        jRadioButton9.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup2.add(jRadioButton9);
         jRadioButton9.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton9.setForeground(new java.awt.Color(255, 204, 51));
@@ -269,6 +275,7 @@ public class Tienda extends javax.swing.JFrame {
         jLabelTituloArmadura.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 102, 102)));
         getContentPane().add(jLabelTituloArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 240, -1, -1));
 
+        Armasboton2.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup2.add(Armasboton2);
         Armasboton2.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         Armasboton2.setForeground(new java.awt.Color(255, 204, 51));
@@ -285,6 +292,7 @@ public class Tienda extends javax.swing.JFrame {
         });
         getContentPane().add(Armasboton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 170, 230, 30));
 
+        Armaboton1.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup2.add(Armaboton1);
         Armaboton1.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         Armaboton1.setForeground(new java.awt.Color(255, 204, 51));
@@ -310,11 +318,11 @@ public class Tienda extends javax.swing.JFrame {
         jLabelTituloInv.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jLabelTituloInv.setForeground(new java.awt.Color(204, 0, 0));
         jLabelTituloInv.setText("Inventario");
-        getContentPane().add(jLabelTituloInv, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
+        getContentPane().add(jLabelTituloInv, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(51, 0, 51));
+        jButton2.setBackground(new java.awt.Color(0, 102, 102));
         jButton2.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 102, 102));
+        jButton2.setForeground(new java.awt.Color(255, 204, 102));
         jButton2.setText("Salir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -322,6 +330,18 @@ public class Tienda extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 0, 80, -1));
+
+        jButtonDesequipar.setBackground(new java.awt.Color(0, 51, 51));
+        jButtonDesequipar.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jButtonDesequipar.setForeground(new java.awt.Color(255, 204, 102));
+        jButtonDesequipar.setText("Desequipar");
+        getContentPane().add(jButtonDesequipar, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 560, 160, 40));
+
+        jButtonEquipar.setBackground(new java.awt.Color(0, 51, 51));
+        jButtonEquipar.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
+        jButtonEquipar.setForeground(new java.awt.Color(255, 204, 102));
+        jButtonEquipar.setText("Equipar");
+        getContentPane().add(jButtonEquipar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 160, 40));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fantasy.png"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
@@ -386,26 +406,32 @@ public class Tienda extends javax.swing.JFrame {
 
     private void Armaboton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Armaboton1MouseClicked
         txtnom.setText("Espada voluptatem");
+        JOptionPane.showMessageDialog(null,"El precio de este item es de 280D y se puede vender por 140D, La espada Voluptatem aumenta el stat de ataque un 35%");
     }//GEN-LAST:event_Armaboton1MouseClicked
 
     private void Armasboton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Armasboton2MouseClicked
         txtnom.setText("Hacha eveniet");
+        JOptionPane.showMessageDialog(null,"El precio de este item es de 450D y se puede vender por 225D, El Hacha Eveniet aumenta el stat de ataque un 50%");
     }//GEN-LAST:event_Armasboton2MouseClicked
 
     private void jRadioButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton9MouseClicked
         txtnom.setText("Peto sint");
+        JOptionPane.showMessageDialog(null,"El precio de este item es de 320D y se puede vender por 160D, El Peto Sint aumenta el stat de defensa un 70%");
     }//GEN-LAST:event_jRadioButton9MouseClicked
 
     private void jRadioButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton10MouseClicked
         txtnom.setText("Escudo fugit");
+        JOptionPane.showMessageDialog(null,"El precio de este item es de 850D y se puede vender por 425D, El Escudo Fugit aumenta el stat de defensa un 40% y ataque un 20%");
     }//GEN-LAST:event_jRadioButton10MouseClicked
 
     private void jRadioButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton5MouseClicked
         txtnom.setText("Amuleto de voluptate");
+        JOptionPane.showMessageDialog(null,"El precio de este item es de 360D y se puede vender por 180D, El Amuleto Voluptate aumenta el stat de salud 30% , el stat de fuerza un 10% y la fortuna un 40%");
     }//GEN-LAST:event_jRadioButton5MouseClicked
 
     private void jRadioButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton8MouseClicked
         txtnom.setText("Collar adipisci");
+        JOptionPane.showMessageDialog(null,"El precio de este item es de 950D y se puede vender por 475D, El Amuleto Voluptate aumenta el stat de salud 40% , el stat de fuerza un 40% y la fortuna un 80%");
     }//GEN-LAST:event_jRadioButton8MouseClicked
 
     private void txtnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnomActionPerformed
@@ -485,6 +511,8 @@ public class Tienda extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonComprar;
+    private javax.swing.JButton jButtonDesequipar;
+    private javax.swing.JButton jButtonEquipar;
     private javax.swing.JButton jButtonVender;
     private static javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelAtaque;
