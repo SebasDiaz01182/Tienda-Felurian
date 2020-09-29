@@ -63,7 +63,7 @@ public class interfaz extends javax.swing.JFrame {
         jButtonExit.setBackground(new java.awt.Color(255, 255, 204));
         jButtonExit.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jButtonExit.setText("Salir");
-        jButtonExit.setBorder(null);
+        jButtonExit.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 204, 102)));
         jButtonExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonExitActionPerformed(evt);
@@ -124,7 +124,6 @@ else{
     cambio.setVisible(true);
     this.dispose();
 }
-// TODO add your handling code here:
     }//GEN-LAST:event_botonHeroeMouseClicked
 
     private void botonHeroeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonHeroeActionPerformed

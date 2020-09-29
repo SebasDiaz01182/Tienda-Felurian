@@ -35,7 +35,6 @@ public class Villano extends javax.swing.JFrame {
         jButtonExit = new javax.swing.JButton();
         botonRegresar = new javax.swing.JButton();
         jButtonVender = new javax.swing.JButton();
-        jButtonComprar = new javax.swing.JButton();
         jLabelFraseComp = new javax.swing.JLabel();
         jLabelFraseVend = new javax.swing.JLabel();
         jLabelNombre = new javax.swing.JLabel();
@@ -86,26 +85,15 @@ public class Villano extends javax.swing.JFrame {
         getContentPane().add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 30));
 
         jButtonVender.setBackground(new java.awt.Color(51, 51, 51));
-        jButtonVender.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jButtonVender.setFont(new java.awt.Font("Harrington", 1, 24)); // NOI18N
         jButtonVender.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonVender.setText("Vender");
+        jButtonVender.setText("Tienda Felurian");
         jButtonVender.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonVenderMouseClicked(evt);
             }
         });
-        getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 620, 110, -1));
-
-        jButtonComprar.setBackground(new java.awt.Color(51, 51, 51));
-        jButtonComprar.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
-        jButtonComprar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonComprar.setText("Comprar");
-        jButtonComprar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonComprarMouseClicked(evt);
-            }
-        });
-        getContentPane().add(jButtonComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 660, -1, -1));
+        getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 660, 220, -1));
 
         jLabelFraseComp.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelFraseComp.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,12 +187,6 @@ cambio6.setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButtonVenderMouseClicked
 
-    private void jButtonComprarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonComprarMouseClicked
-Tienda cambio6= new Tienda();
-cambio6.setVisible(true);
-this.dispose();
-    }//GEN-LAST:event_jButtonComprarMouseClicked
-
     
     public void cmabiarStatSalud(String cantidad){
         jLabelSalud.setText("Salud: "+cantidad);
@@ -230,7 +212,6 @@ this.dispose();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonRegresar;
-    private javax.swing.JButton jButtonComprar;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonVender;
     private javax.swing.JLabel jLabelAtaque;

@@ -34,7 +34,6 @@ public class interfaz2 extends javax.swing.JFrame {
         jButtonRegresar = new javax.swing.JButton();
         jButtonExit = new javax.swing.JButton();
         jButtonVender = new javax.swing.JButton();
-        jButtonComprar = new javax.swing.JButton();
         jLabelFraseV = new javax.swing.JLabel();
         jLabelFraseC = new javax.swing.JLabel();
         jLabelQuote = new javax.swing.JLabel();
@@ -85,9 +84,9 @@ public class interfaz2 extends javax.swing.JFrame {
         getContentPane().add(jButtonExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, 100, 30));
 
         jButtonVender.setBackground(new java.awt.Color(102, 0, 0));
-        jButtonVender.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jButtonVender.setFont(new java.awt.Font("Harrington", 1, 24)); // NOI18N
         jButtonVender.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonVender.setText("Vender ");
+        jButtonVender.setText("Tienda Felurian ");
         jButtonVender.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonVenderMouseClicked(evt);
@@ -98,26 +97,17 @@ public class interfaz2 extends javax.swing.JFrame {
                 jButtonVenderActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 630, 120, -1));
-
-        jButtonComprar.setBackground(new java.awt.Color(102, 0, 0));
-        jButtonComprar.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
-        jButtonComprar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonComprar.setText("Comprar");
-        jButtonComprar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonComprarMouseClicked(evt);
-            }
-        });
-        getContentPane().add(jButtonComprar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 700, 120, 30));
+        getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 690, 230, -1));
 
         jLabelFraseV.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabelFraseV.setForeground(new java.awt.Color(255, 255, 102));
         jLabelFraseV.setText("Listo para desechar esa vieja armadura!");
-        getContentPane().add(jLabelFraseV, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 600, 380, 30));
+        getContentPane().add(jLabelFraseV, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 630, 380, 30));
 
         jLabelFraseC.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
+        jLabelFraseC.setForeground(new java.awt.Color(255, 255, 102));
         jLabelFraseC.setText("Necesitas nuevo equipo para vencer!");
-        getContentPane().add(jLabelFraseC, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 670, -1, -1));
+        getContentPane().add(jLabelFraseC, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 660, -1, -1));
 
         jLabelQuote.setFont(new java.awt.Font("Harrington", 3, 15)); // NOI18N
         jLabelQuote.setForeground(new java.awt.Color(255, 204, 102));
@@ -136,7 +126,7 @@ public class interfaz2 extends javax.swing.JFrame {
 
         jLabelStatVida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/CorazonFn2.png"))); // NOI18N
         jLabelStatVida.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatVida, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 50, -1));
+        getContentPane().add(jLabelStatVida, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 50, -1));
 
         jLabelStatFuerza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/puño.jpg"))); // NOI18N
         jLabelStatFuerza.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
@@ -148,21 +138,21 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabelStatsAtaque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Espadafin.png"))); // NOI18N
         jLabelStatsAtaque.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
         jLabelStatsAtaque.setPreferredSize(new java.awt.Dimension(43, 40));
-        getContentPane().add(jLabelStatsAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 50, 50));
+        getContentPane().add(jLabelStatsAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, 50, 50));
 
         jLabelStatDefensa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Armadura.png"))); // NOI18N
         jLabelStatDefensa.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, -1, 50));
+        getContentPane().add(jLabelStatDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, 50));
 
         jLabelStatFortuna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Amuleto_1.png"))); // NOI18N
         jLabelStatFortuna.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(102, 0, 0)));
-        getContentPane().add(jLabelStatFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 510, -1, -1));
+        getContentPane().add(jLabelStatFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 520, -1, -1));
 
         jLabelSalud.setBackground(new java.awt.Color(153, 153, 153));
         jLabelSalud.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jLabelSalud.setForeground(new java.awt.Color(255, 255, 102));
         jLabelSalud.setText("Salud: 100");
-        getContentPane().add(jLabelSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 160, 30));
+        getContentPane().add(jLabelSalud, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, 160, 30));
 
         jLabelFuerza.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jLabelFuerza.setForeground(new java.awt.Color(255, 255, 102));
@@ -172,22 +162,22 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabelAtaque.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jLabelAtaque.setForeground(new java.awt.Color(255, 255, 102));
         jLabelAtaque.setText("Ataque: 50");
-        getContentPane().add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 160, 30));
+        getContentPane().add(jLabelAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 390, 160, 30));
 
         jLabelDefensa.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jLabelDefensa.setForeground(new java.awt.Color(255, 255, 102));
         jLabelDefensa.setText("Defensa: 30");
-        getContentPane().add(jLabelDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 450, 160, 30));
+        getContentPane().add(jLabelDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 160, 30));
 
         jLabelFortuna.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jLabelFortuna.setForeground(new java.awt.Color(255, 255, 102));
         jLabelFortuna.setText("Fortuna: 10");
-        getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 150, 30));
+        getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 530, 150, 30));
 
         jLabelDinero.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
-        jLabelDinero.setForeground(new java.awt.Color(255, 255, 102));
+        jLabelDinero.setForeground(new java.awt.Color(153, 0, 0));
         jLabelDinero.setText("Drabines: 100D");
-        getContentPane().add(jLabelDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 570, 170, 20));
+        getContentPane().add(jLabelDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 590, 170, 20));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cuarto de armas.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 730));
@@ -219,12 +209,6 @@ cambio3.setVisible(true);
 this.dispose();
     }//GEN-LAST:event_jButtonVenderMouseClicked
 
-    private void jButtonComprarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonComprarMouseClicked
-Tienda cambio3=new Tienda();
-cambio3.setVisible(true);
-this.dispose();
-    }//GEN-LAST:event_jButtonComprarMouseClicked
-
     public void cmabiarStatSalud(String cantidad){
         jLabelSalud.setText("Salud: "+cantidad);
     }
@@ -246,7 +230,6 @@ this.dispose();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonComprar;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonRegresar;
     private javax.swing.JButton jButtonVender;
