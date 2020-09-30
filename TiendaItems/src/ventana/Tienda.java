@@ -30,8 +30,6 @@ public class Tienda extends javax.swing.JFrame {
         (listaItems.get(3)).setNombre("Escudo " +(listaItems.get(3)).getNombre());(listaItems.get(3)).setDefensa(40);(listaItems.get(3)).setAtaque(20);
         (listaItems.get(4)).setNombre("Amuleto de "+(listaItems.get(4)).getNombre());(listaItems.get(4)).setFuerza(10);(listaItems.get(4)).setSalud(30);(listaItems.get(4)).setFortuna(40);
         (listaItems.get(5)).setNombre("Collar "+(listaItems.get(5)).getNombre());(listaItems.get(5)).setSalud(40);(listaItems.get(5)).setFuerza(40);(listaItems.get(5)).setFortuna(80);
-        (listaItems.get(6)).setNombre("Pocion de "+(listaItems.get(6)).getNombre());(listaItems.get(6)).setFuerza(80);
-        (listaItems.get(7)).setNombre("Encantamiento de "+(listaItems.get(7)).getNombre());(listaItems.get(7)).setSalud(60);
         
         return listaItems;
     }
@@ -42,6 +40,14 @@ public class Tienda extends javax.swing.JFrame {
             return precioViejo*30;
         }else{
             return precioViejo*50;
+        }
+    }
+     
+    public static int TransformarPrecioC(int precioViejo){
+        if((precioViejo%2)==0){
+            return precioViejo*20;
+        }else{
+            return precioViejo*40;
         }
     }
     
@@ -65,14 +71,14 @@ public class Tienda extends javax.swing.JFrame {
      public static Consumible TransformarCar(List<Post> postsList,int num){
         Post auxiliar = postsList.get(num);
         String nombreNuevo = TransformarNombre(auxiliar.getTitle());
-        int precioNuevo = TransformarPrecio(auxiliar.getId());
+        int precioNuevo = TransformarPrecioC(auxiliar.getId());
         Consumible consej = new Consumible(nombreNuevo,0,0,precioNuevo, precioNuevo/2);
         return consej;
     }
     public static ArrayList<Consumible> CrearListaCons(List<Post> postsList){
         //Creacion de la lista de Items
         ArrayList<Consumible> listaCons = new ArrayList(2);
-        for(int e=18;e<=20;e++){
+        for(int e=19;e<=21;e++){
             Consumible consAux = TransformarCar(postsList,e);
             listaCons.add(consAux);
         }
@@ -94,8 +100,8 @@ public class Tienda extends javax.swing.JFrame {
     }
     public static ArrayList<Item> CrearListaItems(List<Post> postsList){
         //Creacion de la lista de Items
-        ArrayList<Item> listaItems = new ArrayList(8);
-        for(int e=13;e<=20;e++){
+        ArrayList<Item> listaItems = new ArrayList(6);
+        for(int e=13;e<=18;e++){
             Item itemAux = Transformar(postsList,e);
             listaItems.add(itemAux);
         }
@@ -408,6 +414,16 @@ public class Tienda extends javax.swing.JFrame {
         jRadioButton1.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(255, 204, 51));
         jRadioButton1.setText((itemsConsumibles.get(0)).getNombre());
+        jRadioButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRadioButton1MouseClicked(evt);
+            }
+        });
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 560, 260, -1));
 
         jRadioButton2.setBackground(new java.awt.Color(0, 102, 102));
@@ -415,12 +431,22 @@ public class Tienda extends javax.swing.JFrame {
         jRadioButton2.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton2.setForeground(new java.awt.Color(255, 204, 51));
         jRadioButton2.setText((itemsConsumibles.get(1)).getNombre());
+        jRadioButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRadioButton2MouseClicked(evt);
+            }
+        });
         getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 600, 260, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 51, 51));
         jButton1.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 204, 102));
         jButton1.setText("Utilizar Consumible");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 250, 40));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fantasy.png"))); // NOI18N
@@ -451,7 +477,20 @@ public class Tienda extends javax.swing.JFrame {
         }
         }
         return itemsGlobales.get(y);
+        
     }
+     public static Consumible BuscarItemConsumible(String buscar,ArrayList<Consumible> itemsConsumibles){
+        int y = 0;
+        while(y<1){
+        Consumible corriendo = itemsConsumibles.get(y);
+        if((corriendo.getNombre()).equals(buscar)){
+            break;
+        }else{
+            y+=1;
+        }
+        }
+        return itemsConsumibles.get(y);
+     }
     public static boolean VerificarEquipado(String buscar,ArrayList<Item> itemsEquipados){
         int y = 0;
         while(y<5){
@@ -465,21 +504,33 @@ public class Tienda extends javax.swing.JFrame {
         return false;
     }
     private void jButtonComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarActionPerformed
-
     String buscar = txtnom.getText();
-    Item seleccionado = BuscarItem(buscar,itemsGlobales);
-    int dineroFinal = personaje.getDinero()- seleccionado.getPrecio(); 
-    if(dineroFinal>=0){
-        modelo.addElement(txtnom.getText());
-        txtnom.setText("");
-        jList1.setSelectedIndex(0);
-        cambiarDinero(dineroFinal);
-        personaje.setDinero(dineroFinal);
+    int dineroFinal;
+    if(         (buscar.equals("Pocion de doloribus"))     ||     (buscar.equals("Encantamiento de Asperiores"))         ){
+        Consumible seleccionado = BuscarItemConsumible(buscar,itemsConsumibles);
+        dineroFinal= personaje.getDinero()- seleccionado.getPrecio();
+        if(dineroFinal>=0){
+            modelo.addElement(txtnom.getText());
+            txtnom.setText("");
+            jList1.setSelectedIndex(0);
+            cambiarDinero(dineroFinal);
+            personaje.setDinero(dineroFinal);
+        }else{
+            JOptionPane.showMessageDialog(null,"Error, los drabines no son suficientes.");
+        }
     }else{
-        JOptionPane.showMessageDialog(null,"Error, los drabines no son suficientes.");
+        Item seleccionado = BuscarItem(buscar,itemsGlobales);
+        dineroFinal = personaje.getDinero()- seleccionado.getPrecio(); 
+        if(dineroFinal>=0){
+            modelo.addElement(txtnom.getText());
+            txtnom.setText("");
+            jList1.setSelectedIndex(0);
+            cambiarDinero(dineroFinal);
+            personaje.setDinero(dineroFinal);
+        }else{
+            JOptionPane.showMessageDialog(null,"Error, los drabines no son suficientes.");
+        }
     }
-    
-    
     }//GEN-LAST:event_jButtonComprarActionPerformed
 
     private void jButtonVenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVenderActionPerformed
@@ -487,15 +538,25 @@ public class Tienda extends javax.swing.JFrame {
         {
             int n = jList1.getSelectedIndex();
             String eliminar = (modelo.get(n))+"";
-            Item seleccionado = BuscarItem(eliminar,itemsGlobales);
-            if(seleccionado.isEquipado()){
-                JOptionPane.showMessageDialog(null,"Error,debe de desequipar el item antes de venderlo.");
+            if((eliminar.equals("Pocion de doloribus"))||(eliminar.equals("Encantamiento de Asperiores"))){
+                    Consumible seleccionado = BuscarItemConsumible(eliminar,itemsConsumibles);
+                    int dineroFinal = personaje.getDinero() + seleccionado.getPrecioVenta();
+                    cambiarDinero(dineroFinal);
+                    personaje.setDinero(dineroFinal);
+                    modelo.removeElementAt(n);
+                    jList1.setSelectedIndex(0);
             }else{
-                int dineroFinal = personaje.getDinero() + seleccionado.getPrecioVenta();
-                cambiarDinero(dineroFinal);
-                personaje.setDinero(dineroFinal);
-                modelo.removeElementAt(n);
-                jList1.setSelectedIndex(0);
+                Item seleccionado = BuscarItem(eliminar,itemsGlobales);
+                if(seleccionado.isEquipado()){
+                    JOptionPane.showMessageDialog(null,"Error,debe de desequipar el item antes de venderlo.");
+                }else{
+                    int dineroFinal = personaje.getDinero() + seleccionado.getPrecioVenta();
+                    cambiarDinero(dineroFinal);
+                    personaje.setDinero(dineroFinal);
+                    modelo.removeElementAt(n);
+                    jList1.setSelectedIndex(0);
+            }
+            
             }
             
             
@@ -576,6 +637,37 @@ public class Tienda extends javax.swing.JFrame {
     private void jRadioButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton9ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseClicked
+    txtnom.setText("Pocion de doloribus");
+    JOptionPane.showMessageDialog(null,"El precio de este item es de 400D y se puede vender por 200D, La pocion doloribus aumenta el stat de fuerza un 80%");
+    }//GEN-LAST:event_jRadioButton1MouseClicked
+
+    private void jRadioButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton2MouseClicked
+    txtnom.setText("Encantamiento de Asperiores");
+    JOptionPane.showMessageDialog(null,"El precio de este item es de 840D y se puede vender por 420D, El encantamineto de Asperiores aumenta el stat de salud un 60%");                                         
+    }//GEN-LAST:event_jRadioButton2MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       if(modelo.getSize()>0){
+            int n = jList1.getSelectedIndex();
+            String eliminar = (modelo.get(n))+"";
+            if((eliminar.equals("Pocion de doloribus"))||(eliminar.equals("Encantamiento de Asperiores"))){
+                Consumible seleccionado = BuscarItemConsumible(eliminar,itemsConsumibles);
+                personaje.ConsumirStats(seleccionado);
+                cambiarEtiquetas();
+                modelo.removeElementAt(n);
+                jList1.setSelectedIndex(0);
+            }else{
+                JOptionPane.showMessageDialog(null,"El item seleccionado no es un consumible.");
+            }
+            
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
     // Cambiar Etiquetas
     public void cambiarEtiquetas(){
         jLabelSalud.setText("Salud: "+personaje.getSalud()+"");
