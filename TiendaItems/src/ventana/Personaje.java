@@ -102,4 +102,14 @@ public class Personaje {
         this.fuerza=this.fuerza - item.getFuerza();
     }
     
+    
+    public void ConsumirStats(Consumible consumible){
+        this.fuerza = this.fuerza + consumible.getFuerza();
+        this.salud = this.salud + consumible.getSalud();
+    }
+    public void RestarStats(Consumible consumible){
+        this.fuerza = this.fuerza - consumible.getFuerza();
+        this.salud = this.salud - consumible.getSalud();
+    }
+    
 }

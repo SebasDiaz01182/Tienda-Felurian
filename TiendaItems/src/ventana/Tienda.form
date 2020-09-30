@@ -688,7 +688,7 @@
           <Color blue="33" green="cc" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="&quot;Sustituir&quot;" type="code"/>
+          <Connection code="(itemsConsumibles.get(0)).getNombre()" type="code"/>
         </Property>
       </Properties>
       <Constraints>
@@ -712,7 +712,7 @@
           <Color blue="33" green="cc" red="ff" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="(itemsGlobales.get(7)).getNombre()" type="code"/>
+          <Connection code="(itemsConsumibles.get(1)).getNombre()" type="code"/>
         </Property>
       </Properties>
       <Constraints>

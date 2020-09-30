@@ -35,8 +35,7 @@ public class Tienda extends javax.swing.JFrame {
         
         return listaItems;
     }
-    
-    public static int TransformarPrecio(int precioViejo){
+     public static int TransformarPrecio(int precioViejo){
         if((precioViejo%2)==0){
             return precioViejo*20;
         }else if((precioViejo%10)==5){
@@ -52,6 +51,40 @@ public class Tienda extends javax.swing.JFrame {
         return nombreNuevo;
     }
     
+    
+    
+    
+    //---------------------------------------------------------------------------------------------
+    public static ArrayList TransformarCons(ArrayList<Consumible> listaCons){
+        (listaCons.get(0)).setNombre("Pocion de "+(listaCons.get(0)).getNombre());(listaCons.get(0)).setFuerza(80);
+        (listaCons.get(1)).setNombre("Encantamiento de "+(listaCons.get(1)).getNombre());(listaCons.get(1)).setSalud(60);
+        
+        return listaCons;
+    }
+    
+     public static Consumible TransformarCar(List<Post> postsList,int num){
+        Post auxiliar = postsList.get(num);
+        String nombreNuevo = TransformarNombre(auxiliar.getTitle());
+        int precioNuevo = TransformarPrecio(auxiliar.getId());
+        Consumible consej = new Consumible(nombreNuevo,0,0,precioNuevo, precioNuevo/2);
+        return consej;
+    }
+    public static ArrayList<Consumible> CrearListaCons(List<Post> postsList){
+        //Creacion de la lista de Items
+        ArrayList<Consumible> listaCons = new ArrayList(2);
+        for(int e=18;e<=20;e++){
+            Consumible consAux = TransformarCar(postsList,e);
+            listaCons.add(consAux);
+        }
+        //Transformar a Objetos Listos para Usar
+         ArrayList<Consumible> consFinales = TransformarCons(listaCons);
+         return consFinales;
+    
+    }
+    
+    
+    //---------------------------------------------------------------------------------------------
+   
     public static Item Transformar(List<Post> postsList,int num){
         Post auxiliar = postsList.get(num);
         String nombreNuevo = TransformarNombre(auxiliar.getTitle());
@@ -374,14 +407,14 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton1.setText("Sustituir");
+        jRadioButton1.setText((itemsConsumibles.get(0)).getNombre());
         getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 560, 260, -1));
 
         jRadioButton2.setBackground(new java.awt.Color(0, 102, 102));
         buttonGroup2.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton2.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton2.setText((itemsGlobales.get(7)).getNombre());
+        jRadioButton2.setText((itemsConsumibles.get(1)).getNombre());
         getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 600, 260, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 51, 51));
@@ -592,6 +625,8 @@ public class Tienda extends javax.swing.JFrame {
         ObjectMapper  mapper = new ObjectMapper();
         List<Post> postsList = mapper.readValue(response.body(),new TypeReference<List<Post>>() {});
         itemsGlobales = CrearListaItems(postsList);
+        itemsConsumibles = CrearListaCons(postsList);
+        
         
         
     }
@@ -633,7 +668,8 @@ public class Tienda extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtnom;
     // End of variables declaration//GEN-END:variables
-    public static ArrayList<Item> itemsGlobales ;
+    public static ArrayList<Item> itemsGlobales;
+    public static ArrayList<Consumible> itemsConsumibles;
     public static Personaje personaje = new Personaje(100,50,30,10,1000,60);
 } 
 
