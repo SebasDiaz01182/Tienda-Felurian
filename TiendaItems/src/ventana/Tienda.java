@@ -30,6 +30,9 @@ public class Tienda extends javax.swing.JFrame {
         (listaItems.get(3)).setNombre("Escudo " +(listaItems.get(3)).getNombre());(listaItems.get(3)).setDefensa(40);(listaItems.get(3)).setAtaque(20);
         (listaItems.get(4)).setNombre("Amuleto de "+(listaItems.get(4)).getNombre());(listaItems.get(4)).setFuerza(10);(listaItems.get(4)).setSalud(30);(listaItems.get(4)).setFortuna(40);
         (listaItems.get(5)).setNombre("Collar "+(listaItems.get(5)).getNombre());(listaItems.get(5)).setSalud(40);(listaItems.get(5)).setFuerza(40);(listaItems.get(5)).setFortuna(80);
+        (listaItems.get(6)).setNombre("Pocion de "+(listaItems.get(6)).getNombre());(listaItems.get(6)).setFuerza(80);
+        (listaItems.get(7)).setNombre("Encantamiento de "+(listaItems.get(7)).getNombre());(listaItems.get(7)).setSalud(60);
+        
         return listaItems;
     }
     
@@ -58,8 +61,8 @@ public class Tienda extends javax.swing.JFrame {
     }
     public static ArrayList<Item> CrearListaItems(List<Post> postsList){
         //Creacion de la lista de Items
-        ArrayList<Item> listaItems = new ArrayList(6);
-        for(int e=13;e<=18;e++){
+        ArrayList<Item> listaItems = new ArrayList(8);
+        for(int e=13;e<=20;e++){
             Item itemAux = Transformar(postsList,e);
             listaItems.add(itemAux);
         }
@@ -68,7 +71,6 @@ public class Tienda extends javax.swing.JFrame {
          return itemsFinales;
     
     }
-
     public Tienda() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -214,7 +216,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButton8);
         jRadioButton8.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton8.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton8.setText("Boton6");
+        jRadioButton8.setText((itemsGlobales.get(5)).getNombre());
         jRadioButton8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jRadioButton8MouseClicked(evt);
@@ -226,7 +228,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButton5);
         jRadioButton5.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton5.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton5.setText("Boton5");
+        jRadioButton5.setText((itemsGlobales.get(4)).getNombre());
         jRadioButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jRadioButton5MouseClicked(evt);
@@ -249,7 +251,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButton10);
         jRadioButton10.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton10.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton10.setText("Boton4");
+        jRadioButton10.setText((itemsGlobales.get(3)).getNombre());
         jRadioButton10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jRadioButton10MouseClicked(evt);
@@ -261,7 +263,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButton9);
         jRadioButton9.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton9.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton9.setText("Boton3");
+        jRadioButton9.setText((itemsGlobales.get(2)).getNombre());
         jRadioButton9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jRadioButton9MouseClicked(evt);
@@ -284,7 +286,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(Armasboton2);
         Armasboton2.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         Armasboton2.setForeground(new java.awt.Color(255, 204, 51));
-        Armasboton2.setText("Boton2");
+        Armasboton2.setText((itemsGlobales.get(1)).getNombre());
         Armasboton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Armasboton2MouseClicked(evt);
@@ -301,7 +303,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(Armaboton1);
         Armaboton1.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         Armaboton1.setForeground(new java.awt.Color(255, 204, 51));
-        Armaboton1.setText("Boton1");
+        Armaboton1.setText((itemsGlobales.get(0)).getNombre());
         Armaboton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Armaboton1MouseClicked(evt);
