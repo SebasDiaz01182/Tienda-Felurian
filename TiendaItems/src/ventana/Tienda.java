@@ -27,9 +27,9 @@ public class Tienda extends javax.swing.JFrame {
         (listaItems.get(0)).setNombre("Espada "+(listaItems.get(0)).getNombre());(listaItems.get(0)).setAtaque(35);
         (listaItems.get(1)).setNombre("Hacha "+(listaItems.get(1)).getNombre());(listaItems.get(1)).setAtaque(50);
         (listaItems.get(2)).setNombre("Peto "+(listaItems.get(2)).getNombre());(listaItems.get(2)).setDefensa(70);
-        (listaItems.get(3)).setNombre("Escudo " +(listaItems.get(3)).getNombre());(listaItems.get(3)).setDefensa(40);
-        (listaItems.get(4)).setNombre("Amuleto de "+(listaItems.get(4)).getNombre());(listaItems.get(4)).setFuerza(30);
-        (listaItems.get(5)).setNombre("Collar "+(listaItems.get(5)).getNombre());(listaItems.get(5)).setSalud(50);
+        (listaItems.get(3)).setNombre("Escudo " +(listaItems.get(3)).getNombre());(listaItems.get(3)).setDefensa(40);(listaItems.get(3)).setAtaque(20);
+        (listaItems.get(4)).setNombre("Amuleto de "+(listaItems.get(4)).getNombre());(listaItems.get(4)).setFuerza(10);(listaItems.get(4)).setSalud(30);(listaItems.get(4)).setFortuna(40);
+        (listaItems.get(5)).setNombre("Collar "+(listaItems.get(5)).getNombre());(listaItems.get(5)).setSalud(40);(listaItems.get(5)).setFuerza(40);(listaItems.get(5)).setFortuna(80);
         return listaItems;
     }
     
@@ -214,7 +214,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButton8);
         jRadioButton8.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton8.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton8.setText("Collar Adipisci");
+        jRadioButton8.setText("Boton6");
         jRadioButton8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jRadioButton8MouseClicked(evt);
@@ -226,7 +226,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButton5);
         jRadioButton5.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton5.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton5.setText("Amuleto de Voluptate");
+        jRadioButton5.setText("Boton5");
         jRadioButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jRadioButton5MouseClicked(evt);
@@ -249,7 +249,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButton10);
         jRadioButton10.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton10.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton10.setText("Escudo Fugit");
+        jRadioButton10.setText("Boton4");
         jRadioButton10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jRadioButton10MouseClicked(evt);
@@ -261,7 +261,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButton9);
         jRadioButton9.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         jRadioButton9.setForeground(new java.awt.Color(255, 204, 51));
-        jRadioButton9.setText("Peto Sint");
+        jRadioButton9.setText("Boton3");
         jRadioButton9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jRadioButton9MouseClicked(evt);
@@ -284,7 +284,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(Armasboton2);
         Armasboton2.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         Armasboton2.setForeground(new java.awt.Color(255, 204, 51));
-        Armasboton2.setText("Hacha Eveniet");
+        Armasboton2.setText("Boton2");
         Armasboton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Armasboton2MouseClicked(evt);
@@ -301,7 +301,7 @@ public class Tienda extends javax.swing.JFrame {
         buttonGroup2.add(Armaboton1);
         Armaboton1.setFont(new java.awt.Font("Harrington", 0, 18)); // NOI18N
         Armaboton1.setForeground(new java.awt.Color(255, 204, 51));
-        Armaboton1.setText("Espada Voluptatem");
+        Armaboton1.setText("Boton1");
         Armaboton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Armaboton1MouseClicked(evt);
@@ -423,13 +423,17 @@ public class Tienda extends javax.swing.JFrame {
             int n = jList1.getSelectedIndex();
             String eliminar = (modelo.get(n))+"";
             Item seleccionado = BuscarItem(eliminar,itemsGlobales);
-            int dineroFinal = personaje.getDinero() + seleccionado.getPrecioVenta();
-            cambiarDinero(dineroFinal);
-            personaje.setDinero(dineroFinal);
-            personaje.QuitarStats(seleccionado);
-            cambiarEtiquetas();
-            modelo.removeElementAt(n);
-            jList1.setSelectedIndex(0);
+            if(seleccionado.isEquipado()){
+                JOptionPane.showMessageDialog(null,"Error,debe de desequipar el item antes de venderlo.");
+            }else{
+                int dineroFinal = personaje.getDinero() + seleccionado.getPrecioVenta();
+                cambiarDinero(dineroFinal);
+                personaje.setDinero(dineroFinal);
+                modelo.removeElementAt(n);
+                jList1.setSelectedIndex(0);
+            }
+            
+            
         }
     }//GEN-LAST:event_jButtonVenderActionPerformed
 
@@ -460,7 +464,7 @@ public class Tienda extends javax.swing.JFrame {
 
     private void jRadioButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton8MouseClicked
         txtnom.setText("Collar adipisci");
-        JOptionPane.showMessageDialog(null,"El precio de este item es de 950D y se puede vender por 475D, El Amuleto Voluptate aumenta el stat de salud 40% , el stat de fuerza un 40% y la fortuna un 80%");
+        JOptionPane.showMessageDialog(null,"El precio de este item es de 950D y se puede vender por 475D, El Collar Adipisci aumenta el stat de salud 40% , el stat de fuerza un 40% y la fortuna un 80%");
     }//GEN-LAST:event_jRadioButton8MouseClicked
 
     private void txtnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnomActionPerformed
@@ -534,12 +538,14 @@ public class Tienda extends javax.swing.JFrame {
         String cantidad= dinero+"";
         jLabelRupias.setText("Drabines: "+cantidad+"D");
     }
+    
       public static void main(String args[]) throws IOException, InterruptedException {
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new interfaz().setVisible(true);
+                
             }
         });
         HttpClient client = HttpClient.newHttpClient();

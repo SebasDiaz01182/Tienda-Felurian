@@ -49,6 +49,8 @@ public class Villano extends javax.swing.JFrame {
         jLabelDefensa = new javax.swing.JLabel();
         jLabelFortuna = new javax.swing.JLabel();
         jLabelRupias = new javax.swing.JLabel();
+        jLabelQuote = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabelFondoVillano = new javax.swing.JLabel();
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Dragon.jpg"))); // NOI18N
@@ -161,6 +163,14 @@ public class Villano extends javax.swing.JFrame {
         jLabelRupias.setText("Drabines: 1000D");
         getContentPane().add(jLabelRupias, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 524, 180, 30));
 
+        jLabelQuote.setFont(new java.awt.Font("Harrington", 3, 18)); // NOI18N
+        jLabelQuote.setText("\"O mueres siendo un héroe, o vives lo suficiente ");
+        getContentPane().add(jLabelQuote, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Harrington", 3, 18)); // NOI18N
+        jLabel1.setText("para verte a ti mismo convertirte en villano\"");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, -1, -1));
+
         jLabelFondoVillano.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Villian.jpg"))); // NOI18N
         getContentPane().add(jLabelFondoVillano, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 950, 700));
 
@@ -214,6 +224,7 @@ this.dispose();
     private javax.swing.JButton botonRegresar;
     private javax.swing.JButton jButtonExit;
     private javax.swing.JButton jButtonVender;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelAtaque;
     private javax.swing.JLabel jLabelDefensa;
     private javax.swing.JLabel jLabelFondo;
@@ -223,6 +234,7 @@ this.dispose();
     private javax.swing.JLabel jLabelFraseVend;
     private javax.swing.JLabel jLabelFuerza;
     private javax.swing.JLabel jLabelNombre;
+    private javax.swing.JLabel jLabelQuote;
     private javax.swing.JLabel jLabelRupias;
     private javax.swing.JLabel jLabelSalud;
     private javax.swing.JLabel jLabelStatAtaque;

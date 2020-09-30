@@ -97,17 +97,17 @@ public class interfaz2 extends javax.swing.JFrame {
                 jButtonVenderActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 690, 230, -1));
+        getContentPane().add(jButtonVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 690, 230, -1));
 
         jLabelFraseV.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelFraseV.setForeground(new java.awt.Color(255, 255, 102));
         jLabelFraseV.setText("Listo para desechar esa vieja armadura!");
-        getContentPane().add(jLabelFraseV, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 630, 380, 30));
+        getContentPane().add(jLabelFraseV, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 690, 380, 30));
 
         jLabelFraseC.setFont(new java.awt.Font("Harrington", 1, 18)); // NOI18N
         jLabelFraseC.setForeground(new java.awt.Color(255, 255, 102));
         jLabelFraseC.setText("Necesitas nuevo equipo para vencer!");
-        getContentPane().add(jLabelFraseC, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 660, -1, -1));
+        getContentPane().add(jLabelFraseC, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 660, -1, -1));
 
         jLabelQuote.setFont(new java.awt.Font("Harrington", 3, 15)); // NOI18N
         jLabelQuote.setForeground(new java.awt.Color(255, 204, 102));
@@ -174,10 +174,10 @@ public class interfaz2 extends javax.swing.JFrame {
         jLabelFortuna.setText("Fortuna: 10");
         getContentPane().add(jLabelFortuna, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 530, 150, 30));
 
-        jLabelDinero.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
-        jLabelDinero.setForeground(new java.awt.Color(153, 0, 0));
+        jLabelDinero.setFont(new java.awt.Font("Harrington", 0, 36)); // NOI18N
+        jLabelDinero.setForeground(new java.awt.Color(255, 255, 102));
         jLabelDinero.setText("Drabines: 1000D");
-        getContentPane().add(jLabelDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 590, 180, 20));
+        getContentPane().add(jLabelDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 590, 260, 30));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cuarto de armas.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 730));
