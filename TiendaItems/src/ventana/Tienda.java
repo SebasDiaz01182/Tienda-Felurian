@@ -28,7 +28,7 @@ public class Tienda extends javax.swing.JFrame {
         (listaItems.get(1)).setNombre("Hacha "+(listaItems.get(1)).getNombre());(listaItems.get(1)).setAtaque(50);
         (listaItems.get(2)).setNombre("Peto "+(listaItems.get(2)).getNombre());(listaItems.get(2)).setDefensa(70);
         (listaItems.get(3)).setNombre("Escudo " +(listaItems.get(3)).getNombre());(listaItems.get(3)).setDefensa(40);(listaItems.get(3)).setAtaque(20);
-        (listaItems.get(4)).setNombre("Amuleto de "+(listaItems.get(4)).getNombre());(listaItems.get(4)).setFuerza(10);(listaItems.get(4)).setSalud(30);(listaItems.get(4)).setFortuna(40);
+        (listaItems.get(4)).setNombre("Amuleto "+(listaItems.get(4)).getNombre());(listaItems.get(4)).setFuerza(10);(listaItems.get(4)).setSalud(30);(listaItems.get(4)).setFortuna(40);
         (listaItems.get(5)).setNombre("Collar "+(listaItems.get(5)).getNombre());(listaItems.get(5)).setSalud(40);(listaItems.get(5)).setFuerza(40);(listaItems.get(5)).setFortuna(80);
         
         return listaItems;
@@ -87,7 +87,6 @@ public class Tienda extends javax.swing.JFrame {
          return consFinales;
     
     }
-    
     
     //---------------------------------------------------------------------------------------------
    
@@ -206,7 +205,7 @@ public class Tienda extends javax.swing.JFrame {
 
         jLabelRupias.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jLabelRupias.setForeground(new java.awt.Color(0, 153, 153));
-        jLabelRupias.setText("Drabines: 1000D");
+        jLabelRupias.setText("Drabines: 1500D");
         getContentPane().add(jLabelRupias, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 180, 30));
 
         jList1.setModel(modelo);
@@ -505,6 +504,23 @@ public class Tienda extends javax.swing.JFrame {
     }
     private void jButtonComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarActionPerformed
     String buscar = txtnom.getText();
+    if (buscar.equals("Espada voluptatem")){
+        contEspada+=1;
+    }else if(buscar.equals("Hacha eveniet")){
+        contHacha+=1;
+    }else if(buscar.equals("Peto sint")){
+        contPeto+=1;
+    }else if(buscar.equals("Escudo fugit")){
+        contEscudo+=1;
+    }else if(buscar.equals("Amuleto voluptate")){
+        contAmuleto+=1;
+    }else if(buscar.equals("Collar adipisci")){
+        contCollar+=1;
+    }else if(buscar.equals("Pocion de doloribus")){
+        contPocion+=1;
+    }else if(buscar.equals("Encantamiento de Asperiores")){
+        contEncantamiento+=1;
+    }
     int dineroFinal;
     if(         (buscar.equals("Pocion de doloribus"))     ||     (buscar.equals("Encantamiento de Asperiores"))         ){
         Consumible seleccionado = BuscarItemConsumible(buscar,itemsConsumibles);
@@ -538,6 +554,23 @@ public class Tienda extends javax.swing.JFrame {
         {
             int n = jList1.getSelectedIndex();
             String eliminar = (modelo.get(n))+"";
+            if (eliminar.equals("Espada voluptatem")){
+                contEspada-=1;
+            }else if(eliminar.equals("Hacha eveniet")){
+                contHacha-=1;
+            }else if(eliminar.equals("Peto sint")){
+                contPeto-=1;
+            }else if(eliminar.equals("Escudo fugit")){
+                contEscudo-=1;
+            }else if(eliminar.equals("Amuleto voluptate")){
+                contAmuleto-=1;
+            }else if(eliminar.equals("Collar adipisci")){
+                contCollar-=1;
+            }else if(eliminar.equals("Pocion de doloribus")){
+                contPocion-=1;
+            }else if(eliminar.equals("Encantamiento de Asperiores")){
+                contEncantamiento-=1;
+            }
             if((eliminar.equals("Pocion de doloribus"))||(eliminar.equals("Encantamiento de Asperiores"))){
                     Consumible seleccionado = BuscarItemConsumible(eliminar,itemsConsumibles);
                     int dineroFinal = personaje.getDinero() + seleccionado.getPrecioVenta();
@@ -564,33 +597,63 @@ public class Tienda extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVenderActionPerformed
 
     private void Armaboton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Armaboton1MouseClicked
-        txtnom.setText("Espada voluptatem");
-        JOptionPane.showMessageDialog(null,"El precio de este item es de 280D y se puede vender por 140D, La espada Voluptatem aumenta el stat de ataque un 35%");
+        if(contEspada==1){
+            txtnom.setText("Espada voluptatem");
+            JOptionPane.showMessageDialog(null,"El precio de este item es de 280D y se puede vender por 140D, La espada Voluptatem aumenta el stat de ataque un 35%, el ataque del jugador sería de "+(personaje.getAtaque()+35)+"%"+"\n"+"Posee "+contEspada+ " item de este tipo");
+        }else{
+            txtnom.setText("Espada voluptatem");
+            JOptionPane.showMessageDialog(null,"El precio de este item es de 280D y se puede vender por 140D, La espada Voluptatem aumenta el stat de ataque un 35%, el ataque del jugador sería de "+(personaje.getAtaque()+35)+"%"+"\n"+"Posee "+contEspada+ " items de este tipo");
+        }
     }//GEN-LAST:event_Armaboton1MouseClicked
 
     private void Armasboton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Armasboton2MouseClicked
-        txtnom.setText("Hacha eveniet");
-        JOptionPane.showMessageDialog(null,"El precio de este item es de 450D y se puede vender por 225D, El Hacha Eveniet aumenta el stat de ataque un 50%");
+        if(contHacha==1){
+            txtnom.setText("Hacha eveniet");
+            JOptionPane.showMessageDialog(null,"El precio de este item es de 450D y se puede vender por 225D, El Hacha Eveniet aumenta el stat de ataque un 50%, el ataque del jugador sería de "+(personaje.getAtaque()+50)+"%"+"\n"+"Posee "+contHacha+ " item de este tipo");
+        }else{
+            txtnom.setText("Hacha eveniet");
+            JOptionPane.showMessageDialog(null,"El precio de este item es de 450D y se puede vender por 225D, El Hacha Eveniet aumenta el stat de ataque un 50%, el ataque del jugador sería de "+(personaje.getAtaque()+50)+"%"+"\n"+"Posee "+contHacha+ " items de este tipo");    
+        }
     }//GEN-LAST:event_Armasboton2MouseClicked
 
     private void jRadioButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton9MouseClicked
-        txtnom.setText("Peto sint");
-        JOptionPane.showMessageDialog(null,"El precio de este item es de 320D y se puede vender por 160D, El Peto Sint aumenta el stat de defensa un 70%");
+        if(contPeto==1){
+            txtnom.setText("Peto sint");
+            JOptionPane.showMessageDialog(null,"El precio de este item es de 320D y se puede vender por 160D, El Peto Sint aumenta el stat de defensa un 70%, la defensa del jugador sería de "+(personaje.getDefensa()+70)+"%"+"\n"+"Posee "+contPeto+ " item de este tipo");
+        }else{
+            txtnom.setText("Peto sint");
+            JOptionPane.showMessageDialog(null,"El precio de este item es de 320D y se puede vender por 160D, El Peto Sint aumenta el stat de defensa un 70%, la defensa del jugador sería de "+(personaje.getDefensa()+70)+"%"+"\n"+"Posee "+contPeto+ " items de este tipo");
+        }
     }//GEN-LAST:event_jRadioButton9MouseClicked
 
     private void jRadioButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton10MouseClicked
-        txtnom.setText("Escudo fugit");
-        JOptionPane.showMessageDialog(null,"El precio de este item es de 850D y se puede vender por 425D, El Escudo Fugit aumenta el stat de defensa un 40% y ataque un 20%");
+        if(contEscudo==1){
+            txtnom.setText("Escudo fugit");
+            JOptionPane.showMessageDialog(null,"El precio de este item es de 850D y se puede vender por 425D, El Escudo Fugit aumenta el stat de defensa un 40% y ataque un 20%, la defensa del jugador sería de "+(personaje.getDefensa()+40)+"%"+" y el ataque seriá "+(personaje.getAtaque()+20)+"%"+"\n"+"Posee "+contEscudo+ " item de este tipo");
+        }else{
+            txtnom.setText("Escudo fugit");
+            JOptionPane.showMessageDialog(null,"El precio de este item es de 850D y se puede vender por 425D, El Escudo Fugit aumenta el stat de defensa un 40% y ataque un 20%, la defensa del jugador sería de "+(personaje.getDefensa()+40)+"%"+" y el ataque seriá "+(personaje.getAtaque()+20)+"%"+"\n"+"Posee "+contEscudo+ " items de este tipo");
+        }
     }//GEN-LAST:event_jRadioButton10MouseClicked
 
     private void jRadioButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton5MouseClicked
-        txtnom.setText("Amuleto de voluptate");
-        JOptionPane.showMessageDialog(null,"El precio de este item es de 360D y se puede vender por 180D, El Amuleto Voluptate aumenta el stat de salud 30% , el stat de fuerza un 10% y la fortuna un 40%");
+        if(contAmuleto==1){
+        txtnom.setText("Amuleto voluptate");
+        JOptionPane.showMessageDialog(null,"El precio de este item es de 360D y se puede vender por 180D, El Amuleto Voluptate aumenta el stat de salud 30% , el stat de fuerza un 10% y la fortuna un 40%"+"\n"+ "La salud del jugador sería de "+(personaje.getSalud()+30)+"%" +", la fuerza seriá " +(personaje.getFuerza()+10)+"%"+" y la fortuna seria "+(personaje.getFortuna()+40)+"%"+". Posee "+contAmuleto+ " item de este tipo");
+        }else{
+            txtnom.setText("Amuleto voluptate");
+            JOptionPane.showMessageDialog(null,"El precio de este item es de 360D y se puede vender por 180D, El Amuleto Voluptate aumenta el stat de salud 30% , el stat de fuerza un 10% y la fortuna un 40%"+"\n"+"La salud del jugador sería de "+(personaje.getSalud()+30)+"%" +", la fuerza seriá " +(personaje.getFuerza()+10)+"%"+" y la fortuna seria "+(personaje.getFortuna()+40)+"%"+". Posee "+contAmuleto+ " items de este tipo");
+        }
     }//GEN-LAST:event_jRadioButton5MouseClicked
 
     private void jRadioButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton8MouseClicked
-        txtnom.setText("Collar adipisci");
-        JOptionPane.showMessageDialog(null,"El precio de este item es de 950D y se puede vender por 475D, El Collar Adipisci aumenta el stat de salud 40% , el stat de fuerza un 40% y la fortuna un 80%");
+        if(contCollar==1){
+            txtnom.setText("Collar adipisci");
+            JOptionPane.showMessageDialog(null,"El precio de este item es de 950D y se puede vender por 475D, El Collar Adipisci aumenta el stat de salud 40% , el stat de fuerza un 40% y la fortuna un 80%"+ "\n"+ "La salud del jugador sería de "+(personaje.getSalud()+40)+"%" + ", la fuerza del jugador sería "+(personaje.getFuerza()+40)+"%"+" y la fortuna del jugador sería "+(personaje.getFortuna()+80)+"%"+". Posee "+contCollar+ " item de este tipo");
+        }else{
+            txtnom.setText("Collar adipisci");
+            JOptionPane.showMessageDialog(null,"El precio de este item es de 950D y se puede vender por 475D, El Collar Adipisci aumenta el stat de salud 40% , el stat de fuerza un 40% y la fortuna un 80%"+ "\n"+ "La salud del jugador sería de "+(personaje.getSalud()+40)+"%" + ", la fuerza del jugador sería "+(personaje.getFuerza()+40)+"%"+" y la fortuna del jugador sería "+(personaje.getFortuna()+80)+"%"+". Posee "+contCollar+ " items de este tipo");
+        }
     }//GEN-LAST:event_jRadioButton8MouseClicked
 
     private void txtnomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtnomActionPerformed
@@ -610,14 +673,22 @@ public class Tienda extends javax.swing.JFrame {
         {
             int n = jList1.getSelectedIndex();
             String eliminar = (modelo.get(n))+"";
-            Item seleccionado = BuscarItem(eliminar,itemsGlobales);
-            if(seleccionado.isEquipado()){
-                JOptionPane.showMessageDialog(null,"Error,el item ya ha sido equipado.");
+            String equipado= eliminar;
+            equipado += " E";
+            if((eliminar.equals("Collar adipisci"))||(eliminar.equals("Amuleto voluptate"))||(eliminar.equals("Escudo fugit"))||(eliminar.equals("Peto sint"))||(eliminar.equals("Hacha eveniet"))||(eliminar.equals("Espada voluptatem"))){
+                Item seleccionado = BuscarItem(eliminar,itemsGlobales);
+                if(seleccionado.isEquipado()){
+                    JOptionPane.showMessageDialog(null,"Error,el item ya ha sido equipado.");
+                }else{
+                    personaje.AplicarStats(seleccionado);
+                    cambiarEtiquetas();
+                    seleccionado.setEquipado(true);
+                    modelo.removeElementAt(n);
+                    modelo.addElement(equipado);
+                    jList1.setSelectedIndex(0);
+                }
             }else{
-                personaje.AplicarStats(seleccionado);
-                cambiarEtiquetas();
-                seleccionado.setEquipado(true);
-                jList1.setSelectedIndex(0);
+                JOptionPane.showMessageDialog(null,"El item seleccionado es un consumible, por lo que no se puede equipar.");
             }
         }
     }//GEN-LAST:event_jButtonEquiparActionPerformed
@@ -626,11 +697,28 @@ public class Tienda extends javax.swing.JFrame {
         if(modelo.getSize()>0){
             int n = jList1.getSelectedIndex();
             String eliminar = (modelo.get(n))+"";
-            Item seleccionado = BuscarItem(eliminar,itemsGlobales);
-            personaje.QuitarStats(seleccionado);
-            cambiarEtiquetas();
-            seleccionado.setEquipado(false);
-            jList1.setSelectedIndex(0);
+            //Cortar String
+            String[] parts = eliminar.split(" ");
+            String part1 = parts[0]; 
+            String part2 = parts[1]; 
+            String buscar= parts[0]+" "+parts[1];
+            //-------------------------------------------
+            if((buscar.equals("Collar adipisci"))||(buscar.equals("Amuleto voluptate"))||(buscar.equals("Escudo fugit"))||(buscar.equals("Peto sint"))||(buscar.equals("Hacha eveniet"))||(buscar.equals("Espada voluptatem"))){
+                Item seleccionado = BuscarItem(buscar,itemsGlobales);
+                if (seleccionado.isEquipado()){
+                personaje.QuitarStats(seleccionado);
+                cambiarEtiquetas();
+                seleccionado.setEquipado(false);
+                modelo.removeElementAt(n);
+                modelo.addElement(buscar);
+                jList1.setSelectedIndex(0);
+            }else{
+                 JOptionPane.showMessageDialog(null,"Error,el itema ya fue desequipado.");   
+                }
+            }else{
+                JOptionPane.showMessageDialog(null,"Error,los consumibles no se pueden desequipar.");  
+            } 
+            
         }
     }//GEN-LAST:event_jButtonDesequiparActionPerformed
 
@@ -643,13 +731,23 @@ public class Tienda extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseClicked
-    txtnom.setText("Pocion de doloribus");
-    JOptionPane.showMessageDialog(null,"El precio de este item es de 400D y se puede vender por 200D, La pocion doloribus aumenta el stat de fuerza un 80%");
+    if (contPocion==1){
+        txtnom.setText("Pocion de doloribus");
+        JOptionPane.showMessageDialog(null,"El precio de este item es de 400D y se puede vender por 200D, La pocion doloribus aumenta el stat de fuerza un 80%, la fuerza del jugador sería "+(personaje.getFuerza()+80)+"%"+"\n"+" Ha comprado "+contPocion+" item de este tipo");                    
+    }else{
+       txtnom.setText("Pocion de doloribus");
+       JOptionPane.showMessageDialog(null,"El precio de este item es de 400D y se puede vender por 200D, La pocion doloribus aumenta el stat de fuerza un 80%, la fuerza del jugador sería "+(personaje.getFuerza()+80)+"%"+"\n"+" Ha comprado "+contPocion+" items de este tipo"); 
+    }
     }//GEN-LAST:event_jRadioButton1MouseClicked
 
     private void jRadioButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton2MouseClicked
-    txtnom.setText("Encantamiento de Asperiores");
-    JOptionPane.showMessageDialog(null,"El precio de este item es de 840D y se puede vender por 420D, El encantamineto de Asperiores aumenta el stat de salud un 60%");                                         
+    if(contEncantamiento==1){
+        txtnom.setText("Encantamiento de Asperiores");
+        JOptionPane.showMessageDialog(null,"El precio de este item es de 840D y se puede vender por 420D, El encantamineto de Asperiores aumenta el stat de salud un 60%, la salud del jugador sería "+(personaje.getSalud()+60)+"%"+"\n"+" Ha comprado "+contEncantamiento+" item de este tipo");                                         
+    }else{
+        txtnom.setText("Encantamiento de Asperiores");
+        JOptionPane.showMessageDialog(null,"El precio de este item es de 840D y se puede vender por 420D, El encantamineto de Asperiores aumenta el stat de salud un 60%, la salud del jugador sería "+(personaje.getSalud()+60)+"%"+"\n"+" Ha comprado "+contEncantamiento+" items de este tipo");                                         
+    }
     }//GEN-LAST:event_jRadioButton2MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -676,7 +774,6 @@ public class Tienda extends javax.swing.JFrame {
         jLabelDefensa.setText("Defensa: "+personaje.getDefensa()+"");
         jLabelFortuna.setText("Fortuna: "+personaje.getFortuna()+"");
     }
-    
     //Dinero
     
     public void TransaccionCompra(Item item,Personaje personaje){
@@ -717,10 +814,7 @@ public class Tienda extends javax.swing.JFrame {
         ObjectMapper  mapper = new ObjectMapper();
         List<Post> postsList = mapper.readValue(response.body(),new TypeReference<List<Post>>() {});
         itemsGlobales = CrearListaItems(postsList);
-        itemsConsumibles = CrearListaCons(postsList);
-        
-        
-        
+        itemsConsumibles = CrearListaCons(postsList);        
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JRadioButton Armaboton1;
@@ -762,6 +856,14 @@ public class Tienda extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     public static ArrayList<Item> itemsGlobales;
     public static ArrayList<Consumible> itemsConsumibles;
-    public static Personaje personaje = new Personaje(100,50,30,10,1000,60);
+    public static Personaje personaje = new Personaje(100,50,30,10,1500,60);
+    public int contEspada = 0;
+    public int contHacha = 0;
+    public int contPeto = 0;
+    public int contEscudo = 0;
+    public int contAmuleto = 0;
+    public int contCollar = 0;
+    public int contPocion = 0;
+    public int contEncantamiento = 0;
 } 
 

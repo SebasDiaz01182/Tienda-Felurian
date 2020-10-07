@@ -27,32 +27,26 @@ public class Personaje {
         return salud;
     }
 
- 
     public void setSalud(int salud) {
         this.salud = salud;
     }
 
-  
     public int getAtaque() {
         return ataque;
     }
-
-  
+ 
     public void setAtaque(int ataque) {
         this.ataque = ataque;
     }
 
-
     public int getDefensa() {
         return defensa;
     }
-
-    
+ 
     public void setDefensa(int defensa) {
         this.defensa = defensa;
     }
 
-    
     public int getFortuna() {
         return fortuna;
     }
@@ -62,12 +56,10 @@ public class Personaje {
         this.fortuna = fortuna;
     }
 
-    
     public int getDinero() {
         return dinero;
     }
 
-   
     public void setDinero(int dinero) {
         this.dinero = dinero;
     }
@@ -101,7 +93,6 @@ public class Personaje {
         this.salud=this.salud - item.getSalud();
         this.fuerza=this.fuerza - item.getFuerza();
     }
-    
     
     public void ConsumirStats(Consumible consumible){
         this.fuerza = this.fuerza + consumible.getFuerza();

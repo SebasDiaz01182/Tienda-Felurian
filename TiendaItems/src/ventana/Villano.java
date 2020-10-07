@@ -160,7 +160,7 @@ public class Villano extends javax.swing.JFrame {
 
         jLabelRupias.setFont(new java.awt.Font("Harrington", 0, 24)); // NOI18N
         jLabelRupias.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelRupias.setText("Drabines: 1000D");
+        jLabelRupias.setText("Drabines: 1500D");
         getContentPane().add(jLabelRupias, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 524, 180, 30));
 
         jLabelQuote.setFont(new java.awt.Font("Harrington", 3, 18)); // NOI18N

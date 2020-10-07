@@ -176,7 +176,7 @@ public class interfaz2 extends javax.swing.JFrame {
 
         jLabelDinero.setFont(new java.awt.Font("Harrington", 0, 36)); // NOI18N
         jLabelDinero.setForeground(new java.awt.Color(255, 255, 102));
-        jLabelDinero.setText("Drabines: 1000D");
+        jLabelDinero.setText("Drabines: 1500D");
         getContentPane().add(jLabelDinero, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 590, 260, 30));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Cuarto de armas.jpg"))); // NOI18N
