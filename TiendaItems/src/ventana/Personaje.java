@@ -1,11 +1,8 @@
 
 package ventana;
 
-
 public class Personaje {
 
-    
-   
     //Atributos
     private int salud; 
     private int ataque;

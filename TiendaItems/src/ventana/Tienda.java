@@ -580,7 +580,7 @@ public class Tienda extends javax.swing.JFrame {
                     jList1.setSelectedIndex(0);
             }else{
                 Item seleccionado = BuscarItem(eliminar,itemsGlobales);
-                if(seleccionado.isEquipado()){
+                if((eliminar.equals("Collar adipisci E"))||(eliminar.equals("Amuleto voluptate E"))||(eliminar.equals("Escudo fugit E"))||(eliminar.equals("Peto sint E"))||(eliminar.equals("Hacha eveniet E"))||(eliminar.equals("Espada voluptatem E"))){
                     JOptionPane.showMessageDialog(null,"Error,debe de desequipar el item antes de venderlo.");
                 }else{
                     int dineroFinal = personaje.getDinero() + seleccionado.getPrecioVenta();
@@ -588,11 +588,8 @@ public class Tienda extends javax.swing.JFrame {
                     personaje.setDinero(dineroFinal);
                     modelo.removeElementAt(n);
                     jList1.setSelectedIndex(0);
-            }
-            
-            }
-            
-            
+                }
+            }           
         }
     }//GEN-LAST:event_jButtonVenderActionPerformed
 
@@ -688,7 +685,7 @@ public class Tienda extends javax.swing.JFrame {
                     jList1.setSelectedIndex(0);
                 }
             }else{
-                JOptionPane.showMessageDialog(null,"El item seleccionado es un consumible, por lo que no se puede equipar.");
+                JOptionPane.showMessageDialog(null,"Error, el item no puede ser equipado");
             }
         }
     }//GEN-LAST:event_jButtonEquiparActionPerformed
@@ -706,14 +703,14 @@ public class Tienda extends javax.swing.JFrame {
             if((buscar.equals("Collar adipisci"))||(buscar.equals("Amuleto voluptate"))||(buscar.equals("Escudo fugit"))||(buscar.equals("Peto sint"))||(buscar.equals("Hacha eveniet"))||(buscar.equals("Espada voluptatem"))){
                 Item seleccionado = BuscarItem(buscar,itemsGlobales);
                 if (seleccionado.isEquipado()){
-                personaje.QuitarStats(seleccionado);
-                cambiarEtiquetas();
-                seleccionado.setEquipado(false);
-                modelo.removeElementAt(n);
-                modelo.addElement(buscar);
-                jList1.setSelectedIndex(0);
-            }else{
-                 JOptionPane.showMessageDialog(null,"Error,el itema ya fue desequipado.");   
+                    personaje.QuitarStats(seleccionado);
+                    cambiarEtiquetas();
+                    seleccionado.setEquipado(false);
+                    modelo.removeElementAt(n);
+                    modelo.addElement(buscar);
+                    jList1.setSelectedIndex(0);
+                }else{
+                    JOptionPane.showMessageDialog(null,"Error,el itema ya fue desequipado.");   
                 }
             }else{
                 JOptionPane.showMessageDialog(null,"Error,los consumibles no se pueden desequipar.");  
